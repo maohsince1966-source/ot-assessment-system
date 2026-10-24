@@ -1,16 +1,194 @@
 <!DOCTYPE html>
-<html lang="ja"><head>
+<html lang="ja">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OT臨床実習 臨床推論・SOAP日誌・前後比較統合支援システム</title>
-  <meta name="description" content="5大領域対応の作業療法臨床実習向け 臨床推論・目標連動型SOAPデイリーノート・初期と最終評価の前後比較統合支援システム">
-  <meta property="og:title" content="OT臨床実習 臨床推論・SOAP日誌・前後比較統合支援システム">
-  <meta property="og:description" content="5大領域対応の作業療法臨床実習向け 臨床推論・目標連動型SOAPデイリーノート・初期と最終評価の前後比較統合支援システム">
-  <meta property="og:type" content="website">
+  <meta name="description" content="5大領域対応の作業療法臨床実習向け 臨床推論・目標連動型SOAPデイリーノート・初期と最終評価の前後比較統合支援システム" />
+  <meta property="og:title" content="OT臨床実習 臨床推論・SOAP日誌・前後比較統合支援システム" />
+  <meta property="og:description" content="5大領域対応の作業療法臨床実習向け 臨床推論・目標連動型SOAPデイリーノート・初期と最終評価の前後比較統合支援システム" />
+  <meta property="og:type" content="website" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <style>@import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap";body{background-color:#f8fafc;font-family:Noto Sans JP,sans-serif}.chip-active{color:#fff!important;background-color:#0d9488!important;border-color:#0f766e!important}.print-page-divider{text-align:center;border-top:2px dashed #0d9488;margin:28px 0 20px;position:relative}.print-page-divider span{color:#0f766e;background:#f0fdfa;border:1px solid #5eead4;border-radius:9999px;padding:3px 12px;font-size:11px;font-weight:700;position:relative;top:-11px;box-shadow:0 1px 2px #0000000d}.print-running-header,.print-running-footer{display:none}@page{size:A4 portrait;margin:10mm 12mm 12mm}@media print{.no-print,#edition-top-bar,#main-header,#edition-split-modal,#api-modal,#storage-modal,main{display:none!important}.print-only{display:block!important}html,body{color:#0f172a!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;background:#fff!important;margin:0!important;padding:0!important;font-size:9pt!important;line-height:1.4!important}#report-modal{width:100%!important;max-width:100%!important;box-shadow:none!important;z-index:auto!important;background:0 0!important;margin:0!important;padding:0!important;display:block!important;position:static!important;overflow:visible!important}#report-modal>div{width:100%!important;max-width:100%!important;box-shadow:none!important;background:0 0!important;border:none!important;border-radius:0!important;margin:0!important;padding:0!important}.report-paged .page-break,.report-paged .print-page-break{page-break-before:always!important;break-before:page!important;border:none!important;height:0!important;margin:0!important;padding:0!important}.report-continuous .page-break,.report-continuous .print-page-break{page-break-before:auto!important;break-before:auto!important;display:none!important}.print-avoid-break,.print-section-box,.sv-signature-block,tr{page-break-inside:avoid!important;break-inside:avoid!important}table{border-collapse:collapse!important;page-break-inside:auto!important;width:100%!important;margin-bottom:6px!important;font-size:8pt!important}thead{display:table-header-group!important}tfoot{display:table-footer-group!important}th,td{border:1px solid #94a3b8!important;padding:4px 6px!important}th{color:#0f172a!important;background-color:#f1f5f9!important;font-weight:700!important}.print-running-header{color:#475569!important;border-bottom:1.5px solid #0d9488!important;justify-content:space-between!important;align-items:center!important;margin-bottom:8px!important;padding-bottom:2.5px!important;font-size:7.5pt!important;display:flex!important}.print-running-footer{color:#64748b!important;border-top:1px solid #cbd5e1!important;justify-content:space-between!important;align-items:center!important;margin-top:8px!important;padding-top:2.5px!important;font-size:7.5pt!important;display:flex!important}.report-scale-compact{font-size:8.2pt!important}.report-scale-compact table{font-size:7.4pt!important}.report-scale-dense{font-size:7.5pt!important}.report-scale-dense table{font-size:6.8pt!important}}</style>
-<script src="/_aistudio-iframe.js?v=6634132a"></script><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.top-28{top:7rem}.top-\[37px\]{top:37px}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-4{margin-top:1rem;margin-bottom:1rem}.my-6{margin-top:1.5rem;margin-bottom:1.5rem}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mr-1{margin-right:0.25rem}.mr-1\.5{margin-right:0.375rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mb-0\.5{margin-bottom:0.125rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-5{height:1.25rem}.max-h-28{max-height:7rem}.max-h-36{max-height:9rem}.max-h-44{max-height:11rem}.max-h-\[750px\]{max-height:750px}.max-h-\[90vh\]{max-height:90vh}.w-5{width:1.25rem}.w-full{width:100%}.w-1\/3{width:33.333333%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.border-collapse{border-collapse:collapse}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-0\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.125rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.125rem * var(--tw-space-y-reverse))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.whitespace-pre-wrap{white-space:pre-wrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-b-4{border-bottom-width:4px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity, 1))}.border-amber-500{--tw-border-opacity:1;border-color:rgb(245 158 11 / var(--tw-border-opacity, 1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-cyan-200\/60{border-color:rgb(165 243 252 / 0.6)}.border-cyan-400{--tw-border-opacity:1;border-color:rgb(34 211 238 / var(--tw-border-opacity, 1))}.border-cyan-700{--tw-border-opacity:1;border-color:rgb(14 116 144 / var(--tw-border-opacity, 1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208 / var(--tw-border-opacity, 1))}.border-emerald-200\/60{border-color:rgb(167 243 208 / 0.6)}.border-emerald-300{--tw-border-opacity:1;border-color:rgb(110 231 183 / var(--tw-border-opacity, 1))}.border-emerald-400{--tw-border-opacity:1;border-color:rgb(52 211 153 / var(--tw-border-opacity, 1))}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.border-emerald-700{--tw-border-opacity:1;border-color:rgb(4 120 87 / var(--tw-border-opacity, 1))}.border-indigo-200{--tw-border-opacity:1;border-color:rgb(199 210 254 / var(--tw-border-opacity, 1))}.border-indigo-300{--tw-border-opacity:1;border-color:rgb(165 180 252 / var(--tw-border-opacity, 1))}.border-indigo-500{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.border-purple-200{--tw-border-opacity:1;border-color:rgb(233 213 255 / var(--tw-border-opacity, 1))}.border-rose-200{--tw-border-opacity:1;border-color:rgb(254 205 211 / var(--tw-border-opacity, 1))}.border-sky-500{--tw-border-opacity:1;border-color:rgb(14 165 233 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-teal-100{--tw-border-opacity:1;border-color:rgb(204 251 241 / var(--tw-border-opacity, 1))}.border-teal-200{--tw-border-opacity:1;border-color:rgb(153 246 228 / var(--tw-border-opacity, 1))}.border-teal-200\/60{border-color:rgb(153 246 228 / 0.6)}.border-teal-300{--tw-border-opacity:1;border-color:rgb(94 234 212 / var(--tw-border-opacity, 1))}.border-teal-500{--tw-border-opacity:1;border-color:rgb(20 184 166 / var(--tw-border-opacity, 1))}.border-teal-600{--tw-border-opacity:1;border-color:rgb(13 148 136 / var(--tw-border-opacity, 1))}.border-teal-700{--tw-border-opacity:1;border-color:rgb(15 118 110 / var(--tw-border-opacity, 1))}.border-teal-700\/80{border-color:rgb(15 118 110 / 0.8)}.border-transparent{border-color:transparent}.border-slate-200\/80{border-color:rgb(226 232 240 / 0.8)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-amber-50\/50{background-color:rgb(255 251 235 / 0.5)}.bg-amber-50\/60{background-color:rgb(255 251 235 / 0.6)}.bg-amber-50\/70{background-color:rgb(255 251 235 / 0.7)}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50\/50{background-color:rgb(239 246 255 / 0.5)}.bg-cyan-200{--tw-bg-opacity:1;background-color:rgb(165 243 252 / var(--tw-bg-opacity, 1))}.bg-cyan-50\/60{background-color:rgb(236 254 255 / 0.6)}.bg-cyan-800{--tw-bg-opacity:1;background-color:rgb(21 94 117 / var(--tw-bg-opacity, 1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229 / var(--tw-bg-opacity, 1))}.bg-emerald-200{--tw-bg-opacity:1;background-color:rgb(167 243 208 / var(--tw-bg-opacity, 1))}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.bg-emerald-50\/50{background-color:rgb(236 253 245 / 0.5)}.bg-emerald-50\/60{background-color:rgb(236 253 245 / 0.6)}.bg-emerald-50\/80{background-color:rgb(236 253 245 / 0.8)}.bg-emerald-700{--tw-bg-opacity:1;background-color:rgb(4 120 87 / var(--tw-bg-opacity, 1))}.bg-emerald-800{--tw-bg-opacity:1;background-color:rgb(6 95 70 / var(--tw-bg-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-50\/60{background-color:rgb(238 242 255 / 0.6)}.bg-pink-100{--tw-bg-opacity:1;background-color:rgb(252 231 243 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-purple-50\/50{background-color:rgb(250 245 255 / 0.5)}.bg-rose-100{--tw-bg-opacity:1;background-color:rgb(255 228 230 / var(--tw-bg-opacity, 1))}.bg-rose-50\/50{background-color:rgb(255 241 242 / 0.5)}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-50\/70{background-color:rgb(248 250 252 / 0.7)}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/60{background-color:rgb(15 23 42 / 0.6)}.bg-slate-900\/75{background-color:rgb(15 23 42 / 0.75)}.bg-teal-100{--tw-bg-opacity:1;background-color:rgb(204 251 241 / var(--tw-bg-opacity, 1))}.bg-teal-200{--tw-bg-opacity:1;background-color:rgb(153 246 228 / var(--tw-bg-opacity, 1))}.bg-teal-400{--tw-bg-opacity:1;background-color:rgb(45 212 191 / var(--tw-bg-opacity, 1))}.bg-teal-50{--tw-bg-opacity:1;background-color:rgb(240 253 250 / var(--tw-bg-opacity, 1))}.bg-teal-50\/60{background-color:rgb(240 253 250 / 0.6)}.bg-teal-50\/70{background-color:rgb(240 253 250 / 0.7)}.bg-teal-700{--tw-bg-opacity:1;background-color:rgb(15 118 110 / var(--tw-bg-opacity, 1))}.bg-teal-800{--tw-bg-opacity:1;background-color:rgb(17 94 89 / var(--tw-bg-opacity, 1))}.bg-teal-900{--tw-bg-opacity:1;background-color:rgb(19 78 74 / var(--tw-bg-opacity, 1))}.bg-teal-900\/80{background-color:rgb(19 78 74 / 0.8)}.bg-teal-900\/90{background-color:rgb(19 78 74 / 0.9)}.bg-violet-100{--tw-bg-opacity:1;background-color:rgb(237 233 254 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-indigo-50\/20{background-color:rgb(238 242 255 / 0.2)}.bg-rose-50{--tw-bg-opacity:1;background-color:rgb(255 241 242 / var(--tw-bg-opacity, 1))}.bg-teal-50\/30{background-color:rgb(240 253 250 / 0.3)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-teal-50{--tw-gradient-from:#f0fdfa var(--tw-gradient-from-position);--tw-gradient-to:rgb(240 253 250 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-teal-900{--tw-gradient-from:#134e4a var(--tw-gradient-from-position);--tw-gradient-to:rgb(19 78 74 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-emerald-50{--tw-gradient-to:#ecfdf5 var(--tw-gradient-to-position)}.to-slate-800{--tw-gradient-to:#1e293b var(--tw-gradient-to-position)}.p-0\.5{padding:0.125rem}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-1{padding-bottom:0.25rem}.pb-2{padding-bottom:0.5rem}.pb-20{padding-bottom:5rem}.pb-3{padding-bottom:0.75rem}.pb-4{padding-bottom:1rem}.pl-3{padding-left:0.75rem}.pl-5{padding-left:1.25rem}.pr-1{padding-right:0.25rem}.pt-1{padding-top:0.25rem}.pt-2{padding-top:0.5rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.align-top{vertical-align:top}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.text-amber-200{--tw-text-opacity:1;color:rgb(253 230 138 / var(--tw-text-opacity, 1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15 / var(--tw-text-opacity, 1))}.text-amber-950{--tw-text-opacity:1;color:rgb(69 26 3 / var(--tw-text-opacity, 1))}.text-blue-900{--tw-text-opacity:1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.text-blue-950{--tw-text-opacity:1;color:rgb(23 37 84 / var(--tw-text-opacity, 1))}.text-cyan-600{--tw-text-opacity:1;color:rgb(8 145 178 / var(--tw-text-opacity, 1))}.text-cyan-700{--tw-text-opacity:1;color:rgb(14 116 144 / var(--tw-text-opacity, 1))}.text-cyan-900{--tw-text-opacity:1;color:rgb(22 78 99 / var(--tw-text-opacity, 1))}.text-cyan-950{--tw-text-opacity:1;color:rgb(8 51 68 / var(--tw-text-opacity, 1))}.text-emerald-200{--tw-text-opacity:1;color:rgb(167 243 208 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-emerald-900{--tw-text-opacity:1;color:rgb(6 78 59 / var(--tw-text-opacity, 1))}.text-emerald-950{--tw-text-opacity:1;color:rgb(2 44 34 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-indigo-900{--tw-text-opacity:1;color:rgb(49 46 129 / var(--tw-text-opacity, 1))}.text-indigo-950{--tw-text-opacity:1;color:rgb(30 27 75 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-pink-950{--tw-text-opacity:1;color:rgb(80 7 36 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-purple-900{--tw-text-opacity:1;color:rgb(88 28 135 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-rose-900{--tw-text-opacity:1;color:rgb(136 19 55 / var(--tw-text-opacity, 1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.text-sky-900{--tw-text-opacity:1;color:rgb(12 74 110 / var(--tw-text-opacity, 1))}.text-sky-950{--tw-text-opacity:1;color:rgb(8 47 73 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23 / var(--tw-text-opacity, 1))}.text-teal-100{--tw-text-opacity:1;color:rgb(204 251 241 / var(--tw-text-opacity, 1))}.text-teal-200{--tw-text-opacity:1;color:rgb(153 246 228 / var(--tw-text-opacity, 1))}.text-teal-300{--tw-text-opacity:1;color:rgb(94 234 212 / var(--tw-text-opacity, 1))}.text-teal-400{--tw-text-opacity:1;color:rgb(45 212 191 / var(--tw-text-opacity, 1))}.text-teal-600{--tw-text-opacity:1;color:rgb(13 148 136 / var(--tw-text-opacity, 1))}.text-teal-700{--tw-text-opacity:1;color:rgb(15 118 110 / var(--tw-text-opacity, 1))}.text-teal-800{--tw-text-opacity:1;color:rgb(17 94 89 / var(--tw-text-opacity, 1))}.text-teal-900{--tw-text-opacity:1;color:rgb(19 78 74 / var(--tw-text-opacity, 1))}.text-teal-950{--tw-text-opacity:1;color:rgb(4 47 46 / var(--tw-text-opacity, 1))}.text-violet-950{--tw-text-opacity:1;color:rgb(46 16 101 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-emerald-800{--tw-text-opacity:1;color:rgb(6 95 70 / var(--tw-text-opacity, 1))}.text-indigo-800{--tw-text-opacity:1;color:rgb(55 48 163 / var(--tw-text-opacity, 1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60 / var(--tw-text-opacity, 1))}.text-rose-800{--tw-text-opacity:1;color:rgb(159 18 57 / var(--tw-text-opacity, 1))}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.focus-within\:border-teal-500:focus-within{--tw-border-opacity:1;border-color:rgb(20 184 166 / var(--tw-border-opacity, 1))}.hover\:bg-amber-200:hover{--tw-bg-opacity:1;background-color:rgb(253 230 138 / var(--tw-bg-opacity, 1))}.hover\:bg-amber-500:hover{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-200:hover{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}.hover\:bg-cyan-100:hover{--tw-bg-opacity:1;background-color:rgb(207 250 254 / var(--tw-bg-opacity, 1))}.hover\:bg-cyan-700:hover{--tw-bg-opacity:1;background-color:rgb(14 116 144 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-100:hover{--tw-bg-opacity:1;background-color:rgb(209 250 229 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-200:hover{--tw-bg-opacity:1;background-color:rgb(167 243 208 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-200:hover{--tw-bg-opacity:1;background-color:rgb(199 210 254 / var(--tw-bg-opacity, 1))}.hover\:bg-pink-200:hover{--tw-bg-opacity:1;background-color:rgb(251 207 232 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-200:hover{--tw-bg-opacity:1;background-color:rgb(233 213 255 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-200:hover{--tw-bg-opacity:1;background-color:rgb(254 205 211 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-200:hover{--tw-bg-opacity:1;background-color:rgb(186 230 253 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-300:hover{--tw-bg-opacity:1;background-color:rgb(203 213 225 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-600:hover{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:bg-teal-100:hover{--tw-bg-opacity:1;background-color:rgb(204 251 241 / var(--tw-bg-opacity, 1))}.hover\:bg-teal-50:hover{--tw-bg-opacity:1;background-color:rgb(240 253 250 / var(--tw-bg-opacity, 1))}.hover\:bg-teal-600:hover{--tw-bg-opacity:1;background-color:rgb(13 148 136 / var(--tw-bg-opacity, 1))}.hover\:bg-violet-200:hover{--tw-bg-opacity:1;background-color:rgb(221 214 254 / var(--tw-bg-opacity, 1))}.hover\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.hover\:text-slate-800:hover{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.hover\:text-slate-900:hover{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-red-500:hover{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-amber-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(245 158 11 / var(--tw-ring-opacity, 1))}.focus\:ring-emerald-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(16 185 129 / var(--tw-ring-opacity, 1))}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241 / var(--tw-ring-opacity, 1))}.focus\:ring-sky-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(14 165 233 / var(--tw-ring-opacity, 1))}.focus\:ring-teal-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(20 184 166 / var(--tw-ring-opacity, 1))}@media (min-width: 640px){.sm\:col-span-2{grid-column:span 2 / span 2}.sm\:my-6{margin-top:1.5rem;margin-bottom:1.5rem}.sm\:inline{display:inline}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:p-8{padding:2rem}.sm\:px-4{padding-left:1rem;padding-right:1rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:col-span-1{grid-column:span 1 / span 1}.md\:col-span-2{grid-column:span 2 / span 2}.md\:inline-flex{display:inline-flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-6{grid-column:span 6 / span 6}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}}</style></head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+    body { font-family: 'Noto Sans JP', sans-serif; background-color: #f8fafc; }
+    .chip-active {
+      background-color: #0d9488 !important;
+      color: white !important;
+      border-color: #0f766e !important;
+    }
+
+    /* Screen preview divider */
+    .print-page-divider {
+      position: relative;
+      border-top: 2px dashed #0d9488;
+      margin: 28px 0 20px 0;
+      text-align: center;
+    }
+    .print-page-divider span {
+      position: relative;
+      top: -11px;
+      background: #f0fdfa;
+      padding: 3px 12px;
+      font-size: 11px;
+      font-weight: bold;
+      color: #0f766e;
+      border: 1px solid #5eead4;
+      border-radius: 9999px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    /* Running header/footer styles on screen vs print */
+    .print-running-header,
+    .print-running-footer {
+      display: none;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm 12mm 12mm;
+    }
+
+    @media print {
+      /* Hide all interactive app UI */
+      .no-print,
+      #edition-top-bar,
+      #main-header,
+      #edition-split-modal,
+      #api-modal,
+      #storage-modal,
+      main {
+        display: none !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+
+      /* Clean white background & crisp typography */
+      html, body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 9pt !important;
+        line-height: 1.4 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* Expand modal into full document layout */
+      #report-modal {
+        display: block !important;
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        z-index: auto !important;
+      }
+      #report-modal > div {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+      }
+
+      /* Forced page breaks in paged mode */
+      .report-paged .page-break,
+      .report-paged .print-page-break {
+        page-break-before: always !important;
+        break-before: page !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+      }
+      .report-continuous .page-break,
+      .report-continuous .print-page-break {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        display: none !important;
+      }
+
+      /* Prevent awkward cuts across elements */
+      .print-avoid-break,
+      .print-section-box,
+      .sv-signature-block,
+      tr {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      /* Table layout on A4 */
+      table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        page-break-inside: auto !important;
+        font-size: 8pt !important;
+        margin-bottom: 6px !important;
+      }
+      thead {
+        display: table-header-group !important;
+      }
+      tfoot {
+        display: table-footer-group !important;
+      }
+      th, td {
+        padding: 4px 6px !important;
+        border: 1px solid #94a3b8 !important;
+      }
+      th {
+        background-color: #f1f5f9 !important;
+        color: #0f172a !important;
+        font-weight: bold !important;
+      }
+
+      /* Running header and footer per page */
+      .print-running-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        border-bottom: 1.5px solid #0d9488 !important;
+        padding-bottom: 2.5px !important;
+        margin-bottom: 8px !important;
+        font-size: 7.5pt !important;
+        color: #475569 !important;
+      }
+      .print-running-footer {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        border-top: 1px solid #cbd5e1 !important;
+        padding-top: 2.5px !important;
+        margin-top: 8px !important;
+        font-size: 7.5pt !important;
+        color: #64748b !important;
+      }
+
+      /* Density / Scaling variations */
+      .report-scale-compact {
+        font-size: 8.2pt !important;
+      }
+      .report-scale-compact table {
+        font-size: 7.4pt !important;
+      }
+      .report-scale-dense {
+        font-size: 7.5pt !important;
+      }
+      .report-scale-dense table {
+        font-size: 6.8pt !important;
+      }
+    }
+  </style>
+<script src="/_aistudio-iframe.js?v=6634132a"></script></head>
 <body class="text-slate-800 pb-20">
 
   <!-- アプリ領域エディション切替トップバー -->
@@ -35,7 +213,9 @@
       </div>
 
       <div class="flex items-center gap-2">
-        <span id="edition-badge-text" class="hidden md:inline-flex items-center gap-1 text-[11px] bg-slate-800 border border-slate-700 text-teal-300 px-2.5 py-0.5 rounded-full"><i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i> <span>【総合版】全領域マスター (17症例収録)</span></span>
+        <span id="edition-badge-text" class="hidden md:inline-flex items-center gap-1 text-[11px] bg-slate-800 border border-slate-700 text-teal-300 px-2.5 py-0.5 rounded-full">
+          <i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i> <span>全領域対応・全症例収録</span>
+        </span>
         <button type="button" onclick="openModal('edition-split-modal')" class="bg-slate-800 hover:bg-slate-700 border border-slate-600 text-teal-300 hover:text-white px-2.5 py-1 rounded text-[11px] font-bold flex items-center gap-1 transition shadow-xs">
           <i class="fa-solid fa-sliders"></i> 分割アプリ設定・保存
         </button>
@@ -53,7 +233,7 @@
             <h1 id="main-header-title" class="text-base sm:text-lg font-bold leading-tight">OT臨床実習 臨床推論・SOAP日誌・前後比較システム</h1>
             <span id="main-edition-pill" class="text-[10px] bg-teal-900 border border-teal-500 text-teal-200 font-bold px-2 py-0.5 rounded-full whitespace-nowrap">🌟 総合版</span>
           </div>
-          <p id="main-header-subtitle" class="text-xs text-teal-200">全5大領域対応（身体障害・中枢・整形・脊損・PD・RA・手外科・高次脳・脳性麻痺・がん緩和ケア・老年期・精神障害・気分・不安OCD・リワーク就労・発達小児・内部障害）</p>
+          <p id="main-header-subtitle" class="text-xs text-teal-200">5大領域対応 / 目標連動型SOAPデイリーノート ＆ 初期・最終評価比較機能搭載</p>
         </div>
       </div>
 
@@ -64,11 +244,40 @@
         </span>
 
         <!-- サンプル症例セレクト -->
-        <select id="sample-selector" onchange="loadSampleCase(this.value)" class="bg-teal-700 hover:bg-teal-600 text-white border border-teal-500 rounded px-2.5 py-1.5 cursor-pointer font-medium"><option value="">✨ サンプル症例（🌟 総合版（全領域））を読込...</option><option value="case_geriatric">【老年期・認知症】アルツハイマー型認知症・廃用（86歳女性）</option><option value="case_stroke">【身体・中枢】右被殻出血（72歳男性）</option><option value="case_hbd">【身体・高次脳】外傷性脳損傷・前頭葉損傷（46歳男性・復職支援）</option><option value="case_ortho">【身体・整形】左大腿骨頚部骨折（81歳女性）</option><option value="case_sci">【身体・脊損】頚髄損傷 C6（24歳男性）</option><option value="case_pd">【身体・PD】パーキンソン病 H&amp;Y Stage III（68歳女性）</option><option value="case_ra">【身体・RA】関節リウマチ Stage III（56歳女性）</option><option value="case_hand">【身体・手外科】右手根管症候群術後・正中神経麻痺（48歳女性）</option><option value="case_psych">【精神障害】統合失調症（34歳男性・退院準備期）</option><option value="case_mood">【精神・気分】双極性感情障害・うつ状態（42歳女性・復職支援）</option><option value="case_anxiety_ocd">【精神・不安OCD】強迫性障害・全般性不安障害（26歳女性・復職支援）</option><option value="case_rework">【精神・リワーク】反復性うつ病・復職支援・就労準備（38歳男性）</option><option value="case_dev">【発達・小児】ASD・発達性協調運動障害（7歳男児・学齢期支援）</option><option value="case_cp">【発達・小児】脳性麻痺 痙直型両麻痺（5歳男児・就学支援・食具自立）</option><option value="case_adhd">【発達・ADHD】注意欠如多動症・感覚過敏（9歳女児・教室適応）</option><option value="case_internal">【内部障害】COPD急性増悪後（78歳男性）</option><option value="case_cancer">【内部・緩和】肺がん骨転移・緩和ケア期（66歳男性）</option></select>
+        <select id="sample-selector" onchange="loadSampleCase(this.value)" class="bg-teal-700 hover:bg-teal-600 text-white border border-teal-500 rounded px-2.5 py-1.5 cursor-pointer font-medium">
+          <option value="">✨ サンプル症例（SOAP・前後比較付）を読込...</option>
+          <option value="case_geriatric">【老年期・認知症】アルツハイマー型認知症・廃用（86歳女性）</option>
+          <option value="case_stroke">【身体・中枢】右被殻出血（72歳男性）</option>
+          <option value="case_ortho">【身体・整形】左大腿骨頚部骨折（81歳女性）</option>
+          <option value="case_sci">【身体・脊損】頚髄損傷 C6（24歳男性）</option>
+          <option value="case_pd">【身体・PD】パーキンソン病 H&Y Stage III（68歳女性）</option>
+          <option value="case_ra">【身体・RA】関節リウマチ Stage III（56歳女性）</option>
+          <option value="case_hand">【身体・手外科】右手根管症候群術後・正中神経麻痺（48歳女性）</option>
+          <option value="case_psych">【精神障害】統合失調症（34歳男性）</option>
+          <option value="case_mood">【精神・気分】双極性感情障害・うつ状態（42歳女性・復職支援）</option>
+          <option value="case_anxiety_ocd">【精神・不安OCD】強迫性障害・全般性不安（26歳女性・復職支援）</option>
+          <option value="case_rework">【精神・リワーク】うつ病・復職支援・就労準備（38歳男性）</option>
+          <option value="case_dev">【発達・小児】ASD・発達性協調運動障害（7歳男児）</option>
+          <option value="case_cp">【発達・小児】脳性麻痺 痙直型両麻痺（5歳男児・就学支援）</option>
+          <option value="case_internal">【内部障害】COPD急性増悪後（78歳男性）</option>
+          <option value="case_cancer">【内部・緩和】肺がん骨転移・緩和ケア期（66歳男性）</option>
+          <option value="case_hbd">【身体・高次脳】外傷性脳損傷・前頭葉損傷（46歳男性・復職支援）</option>
+        </select>
+
+        <!-- モード切替（教員/学生）ボタン -->
+        <button id="role-mode-btn" type="button" onclick="openTeacherAuthModal()" class="text-xs px-2.5 py-1.5 rounded font-bold flex items-center gap-1.5 transition shadow-xs border bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-600" title="教員モード・学生モードの切替（パスワード認証）">
+          <i id="role-mode-icon" class="fa-solid fa-user-graduate text-emerald-400"></i>
+          <span id="role-mode-text">学生モード</span>
+        </button>
 
         <!-- データ管理モーダル -->
         <button onclick="openModal('storage-modal')" class="bg-amber-600 hover:bg-amber-500 text-white px-3 py-1.5 rounded font-medium flex items-center gap-1 shadow-sm transition">
           <i class="fa-solid fa-floppy-disk"></i> 保存・読込管理
+        </button>
+
+        <!-- GitHub出力ボタン（教員モード時のみ表示） -->
+        <button id="nav-github-btn" type="button" onclick="openGitHubExportModal()" class="hidden bg-slate-800 hover:bg-slate-700 text-white px-3 py-1.5 rounded font-bold flex items-center gap-1.5 shadow-sm transition border border-slate-600" title="GitHubアップロード用ファイルの出力・ダウンロード（教員専用）">
+          <i class="fa-brands fa-github text-slate-200"></i> GitHub出力
         </button>
 
         <!-- Gemini API設定ボタン -->
@@ -181,12 +390,12 @@
               <div>
                 <label class="block text-xs font-bold text-slate-600 mb-1">対象領域</label>
                 <select id="info-domain" onchange="handleInput()" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm bg-white focus:ring-2 focus:ring-teal-500 outline-none">
-          <option value="身体障害領域">🦾 身体障害領域（中枢・整形・脊損・PD・RA等）</option>
-          <option value="老年期・認知症領域">🧓 老年期・認知症領域</option>
-          <option value="精神障害領域">🌱 精神障害領域</option>
-          <option value="発達障害（小児）領域">🧸 発達障害（小児）領域</option>
-          <option value="内部障害領域">🫁 内部障害領域（呼吸・循環・代謝）</option>
-        </select>
+                  <option value="身体障害領域">身体障害領域（中枢・整形等）</option>
+                  <option value="老年期・認知症領域">老年期・認知症領域</option>
+                  <option value="精神障害領域">精神障害領域</option>
+                  <option value="発達障害（小児）領域">発達障害（小児）領域</option>
+                  <option value="内部障害領域">内部障害領域（呼吸・循環・代謝）</option>
+                </select>
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-600 mb-1">要介護度 / 障害福祉サービス等</label>
@@ -350,7 +559,7 @@
               <span><i class="fa-solid fa-table text-teal-600 mr-1.5"></i> 基本・医学情報 自動整理表</span>
               <span class="text-xs font-normal text-slate-400">入力項目のみ反映</span>
             </h3>
-            <div id="step1-table-container" class="text-xs space-y-4"><div class="font-bold text-teal-900 mb-1">■ 1. 基本情報・一般情報</div><table class="w-full border-collapse border border-slate-200 mb-3"><tbody><tr class="border-b border-slate-200"><th class="bg-slate-50 text-left p-2 w-1/3 font-bold text-slate-700 align-top">対象領域</th><td class="p-2 whitespace-pre-wrap">身体障害領域</td></tr></tbody></table></div>
+            <div id="step1-table-container" class="text-xs space-y-4"></div>
           </div>
 
           <div class="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-xl shadow-sm border border-teal-200 p-5">
@@ -413,207 +622,12 @@
           <button onclick="filterAssessmentChips('ADL・作業・共通')" data-filter="ADL・作業・共通" class="domain-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full transition">🏠 ADL・作業・共通</button>
         </div>
 
-        <div id="assessment-chips-container" class="flex flex-wrap gap-2"><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition chip-active shadow-sm"><i class="fa-solid fa-square-check"></i> <span>[老年期・認知症] 認知機能スクリーニング (HDS-R / MMSE)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition chip-active shadow-sm"><i class="fa-solid fa-square-check"></i> <span>[老年期・認知症] 周辺症状(BPSD)・意欲評価 (DBD13 / NPI / Vitality Index)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[老年期・認知症] 認知症重症度・生活自立度・うつ (CDR / 日常生活自立度 / GDS)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[老年期・認知症] フレイル・サルコペニア・転倒・嚥下 (握力 / 5回立ち上がり / 転倒)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脳血管障害] 関節可動域検査 (ROM-T：麻痺・痙縮拘縮予防 / 肩関節亜脱臼可動域制限・疼痛)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脳血管障害] 徒手筋力検査 (MMT)・握力（非麻痺側・体幹筋力 / 起居・移乗・立位支持性）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脳血管障害] 脳血管障害：片麻痺運動機能・回復段階・筋緊張 (BRS / SIAS / MAS / 連合反応・共同運動)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脳血管障害] 感覚検査・疼痛評価 (表在・深部感覚 / NRS・VAS・麻痺側肩関節痛・視床痛)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition chip-active shadow-sm"><i class="fa-solid fa-square-check"></i> <span>[身体障害・脳血管障害] バランス・基本動作・歩行評価 (BBS / TUG / FRT / 装具AFO・杖歩行)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脳血管障害] 脳血管障害：上肢・手指物品操作能力 (STEF / MFT / ピンチ力・ペグ・麻痺手実用性・学習性不使用)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脳血管障害] 脳血管障害：摂食嚥下・栄養・構音障害・失語症（食形態・ポジショニング・むせ・意思伝達手段）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・高次脳機能障害] 高次脳機能評価 (TMT / FAB / BIT 簡易スクリーニング)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・高次脳機能障害] 高次脳：注意障害・記憶障害の評価（CAT / TMT / RBMT・机上検査と生活観察）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・高次脳機能障害] 高次脳：遂行機能障害の評価（BADS・段取り・問題解決能力・IADL観察）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・高次脳機能障害] 高次脳：社会的行動障害・感情コントロールの評価（易怒性・固執・アパシー・脱抑制・TBI-31）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・高次脳機能障害] 高次脳：病識（アウェアネス）の評価（自己障害認識・実能力ギャップ・受容度）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・高次脳機能障害] 高次脳：失行・失認・半側空間無視（USN）評価（BIT・観念/観念運動失行・空間認知）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脊髄損傷] 脊髄損傷：受傷レベル・神経学的評価（ASIA/ISNSCI分類）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脊髄損傷] 脊髄損傷：関節可動域（ROM-T）・筋力（MMT）※残存筋の評価</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脊髄損傷] 脊髄損傷：把持・つまみ機能（キーチ・パルプピンチ等・テノデーシス）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脊髄損傷] 脊髄損傷：褥瘡（床ずれ）のリスク・皮膚管理評価（Braden / 除圧自立度）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脊髄損傷] 脊髄損傷：自律神経過反射・起立性低血圧のリスク管理（Th6以上・離床）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・脊髄損傷] 脊髄損傷：排泄・呼吸機能評価（膀胱直腸障害・自己導尿・肺活量）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・パーキンソン病] パーキンソン病：重症度・病期分類（Hoehn &amp; Yahrの重症度分類）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・パーキンソン病] パーキンソン病：総合的臨床評価スケール（MDS-UPDRS：統合パーキンソン病評価尺度）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・パーキンソン病] パーキンソン病：すくみ足・バランス・歩行評価（FOGQ / TUG / 10m歩行等）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・パーキンソン病] パーキンソン病：筋緊張（筋強剛：Rigidity）・姿勢・ジスキネジア評価</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・パーキンソン病] パーキンソン病：高次脳機能・認知機能・精神症状評価（MMSE / MDS-UPDRS Part I等）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・パーキンソン病] パーキンソン病：嚥下・構音・巧緻動作評価（むせ・構音障害・タッピング・小書字）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・関節リウマチ] 関節リウマチ：炎症・疼痛・朝の強ばり評価（NRS/VAS・腫脹熱感・持続時間）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・関節リウマチ] 関節リウマチ：関節変形の観察・関節可動域（手指特有変形・ROM・スプリント適応）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・関節リウマチ] 関節リウマチ：筋力（MMT）・握力・ピンチ力（※関節負荷に注意して測定・支持筋力）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・関節リウマチ] 関節リウマチ：疾患活動性指標（カルテ情報：DAS28 / SDAI / CDAI・炎症マーカー CRP/ESR）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・関節リウマチ] 関節リウマチ：RA特異的ADL・QOL評価（HAQ 8領域・FIM・SF-36）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・関節リウマチ] 関節リウマチ：日常生活における関節負荷の観察（関節保護指導・自助具の適応評価）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・手の外科・末梢神経] 手の外科・末梢神経：知覚検査（SWモノフィラメント触覚閾値・2点識別覚 s2PD/m2PD・温痛覚・保護知覚）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・手の外科・末梢神経] 手の外科・末梢神経：誘発テスト・神経学的所見（Tinel様サイン・Phalen・Froment・Tear drop）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・手の外科・末梢神経] 手の外科・末梢神経：特有変形・姿勢の観察と浮腫（エデマ）・皮膚栄養障害評価</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・手の外科・末梢神経] 手の外科・末梢神経：関節可動域（TAM / TPM）・拘縮評価（Bunnell-Littlerテスト）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・手の外科・末梢神経] 手の外科・末梢神経：つまみ力・握力・巧緻性（ピンチ力・Jamar握力・STEF・ペグテスト）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・手の外科・末梢神経] 手の外科・末梢神経：上肢特異的QOL・ADL評価（DASH / QuickDASH・実生活困難度）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[身体障害・手の外科・末梢神経] 手の外科・末梢神経：スプリント（装具）の適合評価・装着状況・皮膚管理</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害] 精神症状・全般的機能・病識 (PANSS / BPRS / GAF)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害] 精神科作業遂行・疲労度・対人交流観察</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害] 社会生活技能・退院準備度 (LASMI / 生活管理)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科横断・リカバリー] 精神科横断：作業遂行・対人関係の客観的行動評価（COTE / MOHOST）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科横断・リカバリー] 精神科横断：認知機能・作業能力検査（BACS-J / 内田クレペリン精神検査）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科横断・リカバリー] 精神科横断：リカバリー・主観的QOL・自己効力感（RAS / WHO QOL26 / SF-36）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科横断・リカバリー] 精神科横断：薬物療法副作用・錐体外路症状評価（DIEPSS / アカシジア / 転倒リスク）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科横断・リカバリー] 精神科横断：就労準備性・リワーク評価（MWS / JPRSピラミッド5階層）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科疾患別] 精神科疾患別：気分障害（うつ病・双極性障害：HAM-D / BDI-II / YMRS / 日内変動・休息罪悪感・希死念慮）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科疾患別] 精神科疾患別：不安・強迫性障害・PTSD（STAI / HADS / Y-BOCS / 確認強迫・自律神経トリガー・リラクセーション）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科疾患別] 精神科疾患別：物質使用障害・嗜癖行動（AUDIT / KAST / DAST / SOGS / 変化ステージ・HALT・代替余暇）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科疾患別] 精神科疾患別：摂食障害（EAT-26 / EDI / 最優先身体リスク管理・BMI・隠れ過活動・安静度・白黒思考）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[精神障害・精神科疾患別] 精神科疾患別：パーソナリティ障害・成人発達障害二次障害（感情調整・スプリッティング・治療構造枠組み・クライシスプラン）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[発達・小児] 粗大運動・姿勢保持・微細運動・書字 (GMFM / DCD)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[発達・小児] 感覚プロファイル・感覚統合観察 (SP / JSI-R)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[発達・小児] 発達検査・遊び・切り替え観察 (WISC / 集団適応)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[発達・小児・脳性麻痺] 脳性麻痺：国際的標準分類（GMFCS / MACS / CFCS / EDACS 各レベルI〜V）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[発達・小児・脳性麻痺] 脳性麻痺：筋緊張・病的反射・姿勢コントロール（MAS / 原始反射 / 反応）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[発達・小児・脳性麻痺] 脳性麻痺：上肢機能・微細運動の質（リーチ・把持・リリース・協調・過敏性）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[発達・小児・脳性麻痺] 脳性麻痺：小児ADL・摂食嚥下・遊び評価（WeeFIM / PEDI / 食事・流涎・体位変換）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[発達・小児・脳性麻痺] 脳性麻痺：シーティング・補装具・二次障害予防（座位保持・車椅子・装具・変形拘縮）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[内部障害] 呼吸・循環機能・自覚症状 (mMRC / Hugh-Jones / 呼吸様式)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[内部障害] 運動耐容能・ADL時バイタル変動 (6MD / SpO2 / Borg)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[内部障害・がん・緩和ケア] がん・緩和ケア：全身状態・活動能力指標（ECOG PS / KPS）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[内部障害・がん・緩和ケア] がん・緩和ケア：がん関連疲労（CRF）・倦怠感・ペーシング（BFI / CFS）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[内部障害・がん・緩和ケア] がん・緩和ケア：がん疼痛・苦痛症状スクリーニング（NRS / ESAS-r / STAS-J / CIPN）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[内部障害・がん・緩和ケア] がん・緩和ケア：リスク管理（骨転移・病的骨折予防・脳転移・血液データ）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[内部障害・がん・緩和ケア] がん・緩和ケア：精神心理・スピリチュアルな苦痛とQOL（HADS / 家族支援）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[内部障害・がん・緩和ケア] がん・緩和ケア：残された時間における「意味のある作業」の抽出（COPM / MTDLP / ナラティブ）</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition chip-active shadow-sm"><i class="fa-solid fa-square-check"></i> <span>[ADL・作業・共通] ADL評価 (FIM / Barthel Index / できるADLとしているADLの乖離分析)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition chip-active shadow-sm"><i class="fa-solid fa-square-check"></i> <span>[ADL・作業・共通] IADL・生活行為評価 (FAI / 老研式 / COPM遂行度・満足度)</span></button><button type="button" class="text-xs px-3 py-1.5 rounded-lg border font-medium flex items-center gap-1.5 transition bg-white hover:bg-slate-50 text-slate-700 border-slate-300"><i class="fa-solid fa-square-plus text-slate-400"></i> <span>[ADL・作業・共通] 生活行為向上マネジメント (MTDLP：合意目標・遂行度・満足度)</span></button></div>
+        <div id="assessment-chips-container" class="flex flex-wrap gap-2"></div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div class="lg:col-span-7 space-y-4">
-          <div id="active-assessments-forms" class="space-y-4"><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-            <div class="flex items-center gap-2">
-              <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-0.5 rounded">老年期・認知症</span>
-              <h4 class="text-sm font-bold text-slate-800">認知機能スクリーニング (HDS-R / MMSE)</h4>
-            </div>
-            <button onclick="toggleAssessment('hdsr_mmse')" class="text-xs text-slate-400 hover:text-red-500">
-              <i class="fa-solid fa-xmark"></i> 外す
-            </button>
-          </div>
-          <div class="space-y-3">
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">HDS-R（長谷川式：/30点）</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('hdsr_mmse__hdsr', this.value, false)" placeholder="例: 15/30点（見当識0・遅延再生1・物品記銘5）" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('hdsr_mmse__hdsr', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">MMSE（/30点）</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('hdsr_mmse__mmse', this.value, false)" placeholder="例: 17/30点（五角形模写可、3段階命令可）" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('hdsr_mmse__mmse', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-            <div class="flex items-center gap-2">
-              <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-0.5 rounded">老年期・認知症</span>
-              <h4 class="text-sm font-bold text-slate-800">周辺症状(BPSD)・意欲評価 (DBD13 / NPI / Vitality Index)</h4>
-            </div>
-            <button onclick="toggleAssessment('bpsd_vitality')" class="text-xs text-slate-400 hover:text-red-500">
-              <i class="fa-solid fa-xmark"></i> 外す
-            </button>
-          </div>
-          <div class="space-y-3">
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">BPSD（DBD13 / NPI点数・出現頻度・時間帯）</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('bpsd_vitality__bpsd', this.value, false)" placeholder="例: DBD13 14点（毎日16時頃に帰宅願望が出現）" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('bpsd_vitality__bpsd', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">Vitality Index（意欲：/10点）・覚醒リズム</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('bpsd_vitality__vitality', this.value, false)" placeholder="例: 8/10点（排泄・リハビリで減点、日中傾眠あり）" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('bpsd_vitality__vitality', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-            <div class="flex items-center gap-2">
-              <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-0.5 rounded">身体障害（脳血管障害）</span>
-              <h4 class="text-sm font-bold text-slate-800">バランス・基本動作・歩行評価 (BBS / TUG / FRT / 装具AFO・杖歩行)</h4>
-            </div>
-            <button onclick="toggleAssessment('balance_mobility')" class="text-xs text-slate-400 hover:text-red-500">
-              <i class="fa-solid fa-xmark"></i> 外す
-            </button>
-          </div>
-          <div class="space-y-3">
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">BBS（Berg Balance Scale /56点）・TUG（秒）・FRT（Functional Reach Test: cm）</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('balance_mobility__balance', this.value, false)" placeholder="例: BBS 42/56点（14項目評価：立位保持・方向転換・片脚立ちで減点、転倒リスク注意）。TUG 20.5秒、FRT 18cm" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('balance_mobility__balance', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">基本動作・歩行観察（寝返り・起き上がり・端座位・移乗・車椅子駆動・装具AFO・杖歩行の介助量と安全性）</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('balance_mobility__gait', this.value, false)" placeholder="例: 起居移乗自立。短下肢装具（硬性AFO）＋T字杖にて病棟内40m見守り歩行。立脚初期の反張膝（Back knee）に注意" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('balance_mobility__gait', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-            <div class="flex items-center gap-2">
-              <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-0.5 rounded">ADL・作業・共通</span>
-              <h4 class="text-sm font-bold text-slate-800">ADL評価 (FIM / Barthel Index / できるADLとしているADLの乖離分析)</h4>
-            </div>
-            <button onclick="toggleAssessment('fim_bi')" class="text-xs text-slate-400 hover:text-red-500">
-              <i class="fa-solid fa-xmark"></i> 外す
-            </button>
-          </div>
-          <div class="space-y-3">
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">FIM合計点（/126点：運動/認知）・Barthel Index（/100点）</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('fim_bi__fim_score', this.value, false)" placeholder="例: FIM 84/126点（運動 56/91、認知 28/35）、BI 65点" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('fim_bi__fim_score', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">主要ADL自立度・「できるADL（訓練室）」と「しているADL（病棟）」のギャップ抽出</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('fim_bi__adl_detail', this.value, false)" placeholder="例: 更衣：訓練室では見守り自立だが病棟では看護全介助（ギャップあり）。トイレ動作 5点（下衣引き上げ要見守り）" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('fim_bi__adl_detail', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div><div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 space-y-3">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-            <div class="flex items-center gap-2">
-              <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-0.5 rounded">ADL・作業・共通</span>
-              <h4 class="text-sm font-bold text-slate-800">IADL・生活行為評価 (FAI / 老研式 / COPM遂行度・満足度)</h4>
-            </div>
-            <button onclick="toggleAssessment('iadl_copm')" class="text-xs text-slate-400 hover:text-red-500">
-              <i class="fa-solid fa-xmark"></i> 外す
-            </button>
-          </div>
-          <div class="space-y-3">
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">IADL・退院後生活行為（FAI・老研式：片手調理・洗濯・掃除・買い物・服薬金銭管理・交通機関）</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('iadl_copm__iadl', this.value, false)" placeholder="例: FAI 18/45点。片手調理（ワンハンド調理台・滑り止めマット）練習中、服薬自己管理自立" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('iadl_copm__iadl', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="bg-slate-50/70 p-2.5 rounded-lg border border-slate-200/80 space-y-2">
-                <label class="block text-xs font-bold text-slate-700">COPM 遂行度(/10点)・満足度(/10点：意味のある生活行為の再獲得目標)</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <span class="block text-[11px] font-bold text-teal-800 mb-0.5">【初期評価（開始時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('iadl_copm__copm', this.value, false)" placeholder="例: 遂行度 3/10点、満足度 2/10点（「左手で茶碗を持って食べる」「自分でドリップコーヒーを淹れる」）" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs bg-white focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
-                  </div>
-                  <div>
-                    <span class="block text-[11px] font-bold text-indigo-800 mb-0.5">【最終評価（再評価・終了時）】</span>
-                    <textarea rows="2" oninput="updateAssessmentValue('iadl_copm__copm', this.value, true)" placeholder="最終評価時の数値・変化を入力" class="w-full border border-indigo-200 rounded-lg px-2.5 py-1.5 text-xs bg-indigo-50/20 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div></div>
+          <div id="active-assessments-forms" class="space-y-4"></div>
           <div id="custom-assessments-forms" class="space-y-4"></div>
         </div>
 
@@ -627,7 +641,7 @@
                 Step 6で詳しく効果判定 →
               </button>
             </div>
-            <div id="step2-table-container" class="text-xs overflow-x-auto"><p class="text-slate-400">評価項目を入力すると、初期評価と最終評価の比較表が自動生成されます。</p></div>
+            <div id="step2-table-container" class="text-xs overflow-x-auto"></div>
           </div>
         </div>
       </div>
@@ -689,7 +703,7 @@
         <div class="flex flex-wrap items-center justify-between gap-4 mb-4 pb-3 border-b border-slate-100">
           <div>
             <h2 class="text-base font-bold text-teal-900 flex items-center gap-2">
-              <i class="fa-solid fa-bullseye text-teal-600"></i> 6 &amp; 7. 統合と解釈・目標設定・プログラム立案
+              <i class="fa-solid fa-bullseye text-teal-600"></i> 6 & 7. 統合と解釈・目標設定・プログラム立案
             </h2>
           </div>
           <div class="flex flex-wrap items-center gap-2">
@@ -725,22 +739,7 @@
               <label class="block text-xs font-bold text-slate-700">7. 作業療法プログラム立案（根拠：Rationaleの明記）</label>
               <button onclick="addProgramRow()" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-2.5 py-1 rounded border border-slate-300">＋ プログラム行を追加</button>
             </div>
-            <div id="program-list-container" class="space-y-3"><div class="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-2">
-          <div class="flex items-center justify-between gap-2">
-            <input type="text" value="" oninput="updateProgramRow(0, 'name', this.value)" placeholder="プログラム名" class="flex-1 border border-slate-300 rounded px-2.5 py-1 text-xs font-bold bg-white">
-            <button onclick="removeProgramRow(0)" class="text-xs text-slate-400 hover:text-red-500">削除</button>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div>
-              <label class="block text-[11px] font-bold text-slate-600 mb-0.5">具体的な内容・負荷・リスク管理</label>
-              <textarea rows="2" oninput="updateProgramRow(0, 'detail', this.value)" class="w-full border border-slate-300 rounded p-2 text-xs bg-white"></textarea>
-            </div>
-            <div>
-              <label class="block text-[11px] font-bold text-teal-800 mb-0.5">★ なぜこの対象者にこのプログラムが必要か（根拠：Rationale）</label>
-              <textarea rows="2" oninput="updateProgramRow(0, 'rationale', this.value)" class="w-full border border-teal-300 rounded p-2 text-xs bg-teal-50/30"></textarea>
-            </div>
-          </div>
-        </div></div>
+            <div id="program-list-container" class="space-y-3"></div>
           </div>
         </div>
       </div>
@@ -763,11 +762,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           <div class="bg-white/10 rounded-lg p-3">
             <div class="font-bold text-teal-300 mb-1">🎯 短期目標（STG）</div>
-            <div id="soap-ref-stg" class="whitespace-pre-wrap text-slate-100 leading-relaxed max-h-28 overflow-y-auto">（Step 4で短期目標を設定するとここに常時表示されます）</div>
+            <div id="soap-ref-stg" class="whitespace-pre-wrap text-slate-100 leading-relaxed max-h-28 overflow-y-auto"></div>
           </div>
           <div class="bg-white/10 rounded-lg p-3">
             <div class="font-bold text-amber-300 mb-1">📋 立案済みプログラム一覧（Step 4）</div>
-            <div id="soap-ref-programs" class="space-y-1 text-slate-100 max-h-28 overflow-y-auto"><span class="text-slate-400">（Step 4でプログラムを立案するとここに表示されます）</span></div>
+            <div id="soap-ref-programs" class="space-y-1 text-slate-100 max-h-28 overflow-y-auto"></div>
           </div>
         </div>
       </div>
@@ -804,7 +803,9 @@
               <label class="block text-xs font-bold text-slate-700 mb-1.5">
                 本日実施したプログラムを選択（Step 4と連動・複数選択可）
               </label>
-              <div id="soap-program-checkboxes" class="space-y-1.5 bg-slate-50 p-2.5 rounded-lg border border-slate-200 text-xs"><p class="text-slate-400">Step 4でプログラムを入力すると選択できるようになります。</p></div>
+              <div id="soap-program-checkboxes" class="space-y-1.5 bg-slate-50 p-2.5 rounded-lg border border-slate-200 text-xs">
+                <!-- JSで動的描画 -->
+              </div>
             </div>
 
             <!-- キーワードからSOAPドラフト作成アシスト -->
@@ -871,10 +872,12 @@
                 </h3>
                 <p class="text-xs text-slate-500">実習期間中の日々の経過が時系列で整理され、印刷レポートにも出力されます。</p>
               </div>
-              <span id="soap-count-badge" class="bg-teal-100 text-teal-800 text-xs font-bold px-2.5 py-1 rounded-full">0件記録済</span>
+              <span id="soap-count-badge" class="bg-teal-100 text-teal-800 text-xs font-bold px-2.5 py-1 rounded-full">0件</span>
             </div>
 
-            <div id="soap-notes-list-container" class="space-y-4 max-h-[750px] overflow-y-auto pr-1"><div class="bg-slate-50 border border-slate-200 rounded-xl p-6 text-center text-xs text-slate-400">まだデイリーノート（SOAP）がありません。<br>左のフォームから入力するか、「SOAP下書きを生成」ボタンを押して追加してください。</div></div>
+            <div id="soap-notes-list-container" class="space-y-4 max-h-[750px] overflow-y-auto pr-1">
+              <!-- JSでSOAPカード一覧を描画 -->
+            </div>
           </div>
         </div>
 
@@ -903,25 +906,8 @@
           </div>
         </div>
 
-        <div id="comparison-summary-badges" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-        <div class="bg-slate-50 border border-slate-200 rounded-lg p-3 text-center">
-          <div class="text-xs text-slate-500">評価実施項目数</div>
-          <div class="text-xl font-bold text-slate-800 mt-0.5">0 <span class="text-xs font-normal">項目</span></div>
-        </div>
-        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center">
-          <div class="text-xs text-emerald-700 font-bold">↑ 改善・向上した項目</div>
-          <div class="text-xl font-bold text-emerald-800 mt-0.5">0 <span class="text-xs font-normal">項目</span></div>
-        </div>
-        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-          <div class="text-xs text-blue-700 font-bold">→ 維持された項目</div>
-          <div class="text-xl font-bold text-blue-800 mt-0.5">0 <span class="text-xs font-normal">項目</span></div>
-        </div>
-        <div class="bg-rose-50 border border-rose-200 rounded-lg p-3 text-center">
-          <div class="text-xs text-rose-700 font-bold">↓ 課題・低下がみられた項目</div>
-          <div class="text-xl font-bold text-rose-800 mt-0.5">0 <span class="text-xs font-normal">項目</span></div>
-        </div>
-      </div>
-        <div id="comparison-table-container" class="text-xs overflow-x-auto"><p class="text-slate-400">評価項目を入力すると、初期評価と最終評価の比較表が自動生成されます。</p></div>
+        <div id="comparison-summary-badges" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4"></div>
+        <div id="comparison-table-container" class="text-xs overflow-x-auto"></div>
       </div>
 
       <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-5">
@@ -938,7 +924,7 @@
               <option value="△ 未達成（目標の再設定・継続介入が必要）">△ 未達成（目標再設定・継続介入が必要）</option>
             </select>
             <label class="block text-xs font-bold text-slate-600 mb-1">設定していた短期目標（参照）</label>
-            <div id="ref-stg-box" class="text-[11px] text-slate-600 bg-white border border-slate-200 rounded p-2 whitespace-pre-wrap max-h-36 overflow-y-auto">（Step 4で短期目標を入力するとここに表示されます）</div>
+            <div id="ref-stg-box" class="text-[11px] text-slate-600 bg-white border border-slate-200 rounded p-2 whitespace-pre-wrap max-h-36 overflow-y-auto"></div>
           </div>
 
           <div class="md:col-span-2 space-y-3">
@@ -962,13 +948,13 @@
   </main>
 
   <!-- ==================== スマホ・PC データ保存＆読込管理モーダル ==================== -->
-  <div id="storage-modal" class="fixed inset-0 bg-slate-900/60 z-50 flex items-center justify-center p-4 no-print">
+  <div id="storage-modal" class="fixed inset-0 bg-slate-900/60 z-50 hidden flex items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 space-y-5">
       <div class="flex items-center justify-between border-b pb-3">
         <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
           <i class="fa-solid fa-floppy-disk text-amber-600"></i> 症例データの端末保存・ファイル管理（スマホ・PC対応）
         </h3>
-        <button onclick="closeModal('storage-modal')" class="text-slate-400 hover:text-slate-600 text-xl">×</button>
+        <button onclick="closeModal('storage-modal')" class="text-slate-400 hover:text-slate-600 text-xl">&times;</button>
       </div>
 
       <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
@@ -979,7 +965,7 @@
           <input type="text" id="save-slot-name" placeholder="保存名（例: 症例A_SOAP第5日完了）" class="flex-1 border border-slate-300 rounded-lg px-3 py-1.5 text-xs">
           <button onclick="saveToNamedSlot()" class="bg-teal-700 hover:bg-teal-600 text-white text-xs font-bold px-4 py-1.5 rounded-lg whitespace-nowrap">この端末に保存</button>
         </div>
-        <div id="saved-slots-list" class="space-y-1.5 max-h-44 overflow-y-auto pt-2"><p class="text-xs text-slate-400 py-2 text-center">まだ保存された症例はありません。</p></div>
+        <div id="saved-slots-list" class="space-y-1.5 max-h-44 overflow-y-auto pt-2"></div>
       </div>
 
       <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-4 space-y-3">
@@ -1019,6 +1005,12 @@
             <span>🌱 精神・発達小児版 (.html)</span>
           </button>
         </div>
+        <div id="storage-github-banner" class="hidden mt-2.5 pt-2.5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2">
+          <span class="text-[11px] text-slate-500">【教員専用】GitHubリポジトリへのWebアップロード用ファイルをお探しですか？</span>
+          <button type="button" onclick="closeModal('storage-modal'); openGitHubExportModal();" class="text-xs font-bold text-teal-800 hover:text-teal-950 flex items-center gap-1">
+            <i class="fa-brands fa-github text-slate-700"></i> GitHub用出力画面を開く &rarr;
+          </button>
+        </div>
       </div>
 
       <div class="text-right pt-2">
@@ -1034,7 +1026,7 @@
         <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
           <i class="fa-solid fa-robot text-teal-600"></i> Google Gemini API 連携設定
         </h3>
-        <button onclick="closeModal('api-modal')" class="text-slate-400 hover:text-slate-600 text-xl">×</button>
+        <button onclick="closeModal('api-modal')" class="text-slate-400 hover:text-slate-600 text-xl">&times;</button>
       </div>
 
       <div class="bg-teal-50 border border-teal-200 rounded-xl p-3.5 text-xs text-teal-900 leading-relaxed space-y-1.5">
@@ -1095,6 +1087,9 @@
             <p class="text-xs text-slate-500 mt-0.5">全セクション（基本情報・評価前後比較・ICF・プログラム計画・SOAP日誌・最終考察・SV確認印）をA4フォーマットで最適化出力します。</p>
           </div>
           <div class="flex items-center gap-2">
+            <button type="button" onclick="exportReportToWord()" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-bold px-3.5 py-2.5 rounded-lg flex items-center gap-1.5 shadow-sm transition" title="Microsoft Word形式（.doc）でダウンロードして編集・保存できます">
+              <i class="fa-solid fa-file-word text-blue-200"></i> Wordファイルに出力 (.doc)
+            </button>
             <button type="button" onclick="window.print()" class="bg-teal-700 hover:bg-teal-600 text-white text-xs font-bold px-4 py-2.5 rounded-lg flex items-center gap-1.5 shadow-sm transition">
               <i class="fa-solid fa-print"></i> 印刷 / PDF保存
             </button>
@@ -1102,6 +1097,15 @@
               閉じる
             </button>
           </div>
+        </div>
+
+        <!-- Word出力完了通知バナー（初期非表示） -->
+        <div id="word-export-notice" class="hidden bg-blue-50 border border-blue-200 text-blue-900 px-3.5 py-2 rounded-lg text-xs flex items-center justify-between shadow-2xs">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-blue-600 text-sm"></i>
+            <span><strong>Wordファイル（.doc）を出力しました:</strong> Microsoft Word、Word for Web、またはGoogle ドキュメントで直接開いて加筆・レイアウト調整を行えます。</span>
+          </div>
+          <button type="button" onclick="document.getElementById('word-export-notice').classList.add('hidden')" class="text-blue-500 hover:text-blue-800 font-bold ml-2 text-sm">&times;</button>
         </div>
 
         <!-- 印刷レイアウト・改ページ・縮小コントロールバー -->
@@ -1136,11 +1140,11 @@
           </div>
         </div>
 
-        <!-- 印刷時の推奨設定Tips -->
-        <div class="bg-teal-50 border border-teal-200 rounded-lg px-3 py-1.5 text-[11px] text-teal-900 flex items-center justify-between gap-2">
+        <!-- 印刷・出力時の推奨設定Tips -->
+        <div class="bg-teal-50 border border-teal-200 rounded-lg px-3 py-1.5 text-[11px] text-teal-900 flex flex-wrap items-center justify-between gap-2">
           <span>
             <i class="fa-solid fa-circle-info text-teal-600 mr-1"></i>
-            <strong>A4綺麗出力のコツ:</strong> 印刷画面で<strong>「背景のグラフィックス」を有効（ON）</strong>に設定してください。ステータスバッジや表の配色が忠実に出力されます。
+            <strong>出力ガイド:</strong> 提出前の微調整・文章加筆には<strong>「Word出力」</strong>、清書・PDF化には<strong>「印刷 / PDF保存」</strong>（印刷ダイアログで「背景のグラフィックス」ON推奨）をご活用ください。
           </span>
           <span class="text-teal-700 font-mono hidden sm:inline">用紙: A4 / 縦向き</span>
         </div>
@@ -1160,7 +1164,7 @@
           </h3>
           <p class="text-xs text-slate-500 mt-0.5">本アプリは「総合版」を基盤とし、実習現場に合わせて2つの専門特化アプリにいつでもワンクリックで切り替え・個別保存できます。</p>
         </div>
-        <button onclick="closeModal('edition-split-modal')" class="text-slate-400 hover:text-slate-600 text-2xl font-bold">×</button>
+        <button onclick="closeModal('edition-split-modal')" class="text-slate-400 hover:text-slate-600 text-2xl font-bold">&times;</button>
       </div>
 
       <!-- 3大エディション カード一覧 -->
@@ -1256,6 +1260,197 @@
       <div class="flex items-center justify-between pt-2 border-t border-slate-100">
         <span class="text-[11px] text-slate-400">※URLに <code>?edition=physical</code> または <code>?edition=mental</code> を付けて直接アクセスすることも可能です。</span>
         <button onclick="closeModal('edition-split-modal')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 教員認証・モード管理モーダル ==================== -->
+  <div id="teacher-auth-modal" class="fixed inset-0 bg-slate-900/75 z-50 hidden overflow-y-auto p-4 no-print flex items-center justify-center">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-2xl p-6 my-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
+          <i class="fa-solid fa-lock text-amber-600"></i>
+          <span id="teacher-modal-title">教員モード認証</span>
+        </h3>
+        <button onclick="closeModal('teacher-auth-modal')" class="text-slate-400 hover:text-slate-600 text-2xl font-bold">&times;</button>
+      </div>
+
+      <!-- 認証前（学生モード時）：パスワード入力フォーム -->
+      <div id="teacher-login-view" class="space-y-3.5">
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-900 space-y-1">
+          <div class="font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-shield-halved text-amber-700"></i> 教員専用機能の保護
+          </div>
+          <p class="text-[11px] leading-relaxed text-amber-800">
+            「GitHubへの更新ファイル出力」およびシステム管理機能は教員専用です。アクセスするには教員パスワードを入力してください。
+          </p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">教員パスワード</label>
+          <div class="relative">
+            <input type="password" id="teacher-password-input" onkeydown="if(event.key==='Enter') authenticateTeacher()" placeholder="パスワードを入力" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-amber-500 pr-9">
+            <button type="button" onclick="togglePasswordVisibility('teacher-password-input')" class="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-600 text-xs">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <div id="teacher-login-error" class="hidden text-xs text-rose-600 font-bold mt-1.5 flex items-center gap-1">
+            <i class="fa-solid fa-circle-exclamation"></i> パスワードが正しくありません。
+          </div>
+          <p class="text-[10px] text-slate-400 mt-1">※初期パスワード：<code>ot-teacher</code> （ログイン後に変更可能）</p>
+        </div>
+
+        <div class="flex items-center justify-between pt-2">
+          <button type="button" onclick="closeModal('teacher-auth-modal')" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold px-3.5 py-2 rounded-lg">
+            キャンセル
+          </button>
+          <button type="button" onclick="authenticateTeacher()" class="bg-amber-700 hover:bg-amber-600 text-white text-xs font-bold px-4 py-2 rounded-lg shadow-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-key"></i> 認証して教員モードへ
+          </button>
+        </div>
+      </div>
+
+      <!-- 認証後（教員モード中）：管理・ログアウト・パスワード変更 -->
+      <div id="teacher-active-view" class="hidden space-y-4">
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 text-xs text-emerald-900 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+            <div>
+              <span class="font-bold">現在「教員モード」で動作中</span>
+              <p class="text-[10px] text-emerald-700">GitHub出力メニュー等の教員専用機能が有効化されています。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <button type="button" onclick="openGitHubExportModal(); closeModal('teacher-auth-modal');" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-2 shadow-sm">
+            <i class="fa-brands fa-github text-slate-300"></i> GitHub用ファイル出力画面を開く
+          </button>
+          <button type="button" onclick="logoutTeacherMode()" class="w-full bg-slate-100 hover:bg-rose-50 text-slate-700 hover:text-rose-700 border border-slate-300 hover:border-rose-300 text-xs font-bold py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-right-from-bracket"></i> 学生モードに戻る（ログアウト）
+          </button>
+        </div>
+
+        <!-- パスワード変更アコーディオン -->
+        <div class="border-t border-slate-200 pt-3">
+          <details class="group">
+            <summary class="text-xs font-bold text-slate-700 cursor-pointer flex items-center justify-between hover:text-amber-700">
+              <span><i class="fa-solid fa-lock-open mr-1 text-slate-400"></i>教員パスワードの変更</span>
+              <span class="text-[10px] text-slate-400 group-open:rotate-180 transition">&dtrif;</span>
+            </summary>
+            <div class="mt-2.5 space-y-2.5 bg-slate-50 p-3 rounded-lg border border-slate-200">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 mb-0.5">新しいパスワード</label>
+                <input type="password" id="new-teacher-password" placeholder="4文字以上で入力" class="w-full border border-slate-300 rounded px-2.5 py-1.5 text-xs bg-white">
+              </div>
+              <div class="flex justify-end">
+                <button type="button" onclick="changeTeacherPassword()" class="bg-amber-700 hover:bg-amber-600 text-white text-xs font-bold px-3 py-1.5 rounded shadow-xs">
+                  パスワードを更新
+                </button>
+              </div>
+              <div id="password-change-msg" class="hidden text-[11px] text-emerald-700 font-bold"></div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== GitHubアップロード用ファイル出力モーダル ==================== -->
+  <div id="github-export-modal" class="fixed inset-0 bg-slate-900/75 z-50 hidden overflow-y-auto p-4 no-print flex items-center justify-center">
+    <div class="max-w-2xl w-full bg-white rounded-2xl shadow-2xl p-6 my-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div>
+          <h3 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-2">
+            <i class="fa-brands fa-github text-slate-900 text-xl"></i> GitHub用ファイル出力
+            <span class="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-2 py-0.5 rounded font-bold"><i class="fa-solid fa-lock text-amber-700 mr-1"></i>教員専用機能</span>
+          </h3>
+          <p class="text-xs text-slate-500 mt-0.5">今回の更新（脳血管障害自動選択・他部門情報・Word出力）が含まれた最新ファイルをワンクリックでダウンロードできます。</p>
+        </div>
+        <button onclick="closeModal('github-export-modal')" class="text-slate-400 hover:text-slate-600 text-2xl font-bold">&times;</button>
+      </div>
+
+      <!-- ダウンロード対象ファイルカード -->
+      <div class="space-y-3">
+        <!-- index.html -->
+        <div class="border-2 border-teal-600 bg-teal-50/50 rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="bg-teal-700 text-white font-mono text-xs font-bold px-2 py-0.5 rounded">index.html</span>
+              <span class="text-[11px] bg-teal-200 text-teal-900 px-2 py-0.5 rounded font-bold">最重要（メインアプリ）</span>
+            </div>
+            <p class="text-xs text-slate-700">全機能（総合版・各エディション切り替え・Word出力・脳血管障害対応）を含む基本ファイルです。<strong>GitHubリポジトリの直下（ルート）</strong>に配置します。</p>
+          </div>
+          <button type="button" onclick="downloadGitHubFile('index.html')" class="bg-teal-700 hover:bg-teal-600 text-white text-xs font-bold px-3.5 py-2 rounded-lg whitespace-nowrap shadow-xs flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-download"></i> index.html 保存
+          </button>
+        </div>
+
+        <!-- physical.html & mental.html -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div class="border border-slate-200 bg-white rounded-xl p-3 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="bg-cyan-700 text-white font-mono text-[11px] font-bold px-1.5 py-0.5 rounded">physical.html</span>
+                <span class="text-[10px] text-cyan-900 font-bold">身体障害特化</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">身体障害・老年期専用の単独ファイルです（public/ フォルダ内に配置）。</p>
+            </div>
+            <button type="button" onclick="downloadGitHubFile('physical.html')" class="w-full bg-cyan-700 hover:bg-cyan-600 text-white text-xs font-bold py-1.5 rounded-lg flex items-center justify-center gap-1 transition">
+              <i class="fa-solid fa-download"></i> physical.html 保存
+            </button>
+          </div>
+
+          <div class="border border-slate-200 bg-white rounded-xl p-3 flex flex-col justify-between space-y-2">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="bg-emerald-700 text-white font-mono text-[11px] font-bold px-1.5 py-0.5 rounded">mental.html</span>
+                <span class="text-[10px] text-emerald-900 font-bold">精神・発達特化</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">精神科・発達小児専用の単独ファイルです（public/ フォルダ内に配置）。</p>
+            </div>
+            <button type="button" onclick="downloadGitHubFile('mental.html')" class="w-full bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold py-1.5 rounded-lg flex items-center justify-center gap-1 transition">
+              <i class="fa-solid fa-download"></i> mental.html 保存
+            </button>
+          </div>
+        </div>
+
+        <!-- 一括ZIPダウンロード -->
+        <div class="border border-slate-300 bg-slate-50 rounded-xl p-3 flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-file-zipper text-slate-600 text-xl"></i>
+            <div>
+              <span class="text-xs font-bold text-slate-800">全ファイル一括ZIPアーカイブ（ot-rehab-app.zip）</span>
+              <p class="text-[11px] text-slate-500">index.html, physical.html, mental.html, package.json 等の構成一式</p>
+            </div>
+          </div>
+          <button type="button" onclick="downloadGitHubFile('zip')" class="bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xs flex items-center gap-1 transition">
+            <i class="fa-solid fa-download"></i> ZIP保存
+          </button>
+        </div>
+      </div>
+
+      <!-- GitHub（パターン3）アップロード手順ガイド -->
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-3.5 space-y-2 text-xs">
+        <h4 class="font-bold text-blue-950 flex items-center gap-1.5">
+          <i class="fa-brands fa-github text-blue-700"></i> パターン3（GitHub Web画面）での反映手順
+        </h4>
+        <ol class="list-decimal list-inside space-y-1 text-slate-700 text-[11px] leading-relaxed">
+          <li>上のボタンから <strong>「index.html 保存」</strong> をクリックしてダウンロードします（PCの「ダウンロード」フォルダに保存されます）。</li>
+          <li>ブラウザでご自身の <strong>GitHub リポジトリページ</strong> を開きます。</li>
+          <li>画面右上寄りの <strong>「Add file」</strong> ➔ <strong>「Upload files」</strong> をクリックします。</li>
+          <li>ダウンロードした <strong>index.html</strong> をドラッグ＆ドロップします。</li>
+          <li>画面下部の「Commit changes」欄で緑色の <strong>「Commit changes」</strong> ボタンを押せば即座に反映完了です！</li>
+        </ol>
+      </div>
+
+      <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+        <button type="button" onclick="downloadAllGitHubFiles()" class="text-teal-800 hover:text-teal-950 text-xs font-bold flex items-center gap-1">
+          <i class="fa-solid fa-angles-down"></i> 3ファイル（index/physical/mental）を一括ダウンロード
+        </button>
+        <button type="button" onclick="closeModal('github-export-modal')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg">
+          閉じる
+        </button>
       </div>
     </div>
   </div>
@@ -4544,6 +4739,7 @@
       updateTables();
       renderSoapTabContent();
       renderSavedSlotsList();
+      updateRoleModeUI();
     });
 
     function setAppEdition(editionId, keepCurrentData = true) {
@@ -4716,6 +4912,170 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+    }
+
+    async function downloadGitHubFile(target) {
+      if (target === 'zip') {
+        window.location.href = '/api/download/zip';
+        return;
+      }
+
+      // 1. サーバーAPIから最新の純粋ソースファイルをダウンロード
+      try {
+        const res = await fetch(`/api/download/${target}`);
+        if (res.ok) {
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = target;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          return;
+        }
+      } catch (err) {
+        console.warn('Backend download fallback to DOM:', err);
+      }
+
+      // 2. オフライン動作時のフォールバック生成
+      let content = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      if (target === 'physical.html') {
+        content = content.replace(/let currentAppEdition = ['"][a-z]+['"];/, "let currentAppEdition = 'physical';");
+      } else if (target === 'mental.html') {
+        content = content.replace(/let currentAppEdition = ['"][a-z]+['"];/, "let currentAppEdition = 'mental';");
+      }
+      const blob = new Blob([content], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = target;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    async function downloadAllGitHubFiles() {
+      downloadGitHubFile('index.html');
+      await new Promise(r => setTimeout(r, 600));
+      downloadGitHubFile('physical.html');
+      await new Promise(r => setTimeout(r, 600));
+      downloadGitHubFile('mental.html');
+    }
+
+    // =========================================================================
+    // 教員モード / 学生モード 認証・管理ロジック
+    // =========================================================================
+    let currentRoleMode = 'student'; // 'student' または 'teacher' (初期値は必ず学生モード)
+    const DEFAULT_TEACHER_PASSWORD = 'ot-teacher';
+
+    function getTeacherPassword() {
+      return localStorage.getItem('ot_teacher_password') || DEFAULT_TEACHER_PASSWORD;
+    }
+
+    function openTeacherAuthModal() {
+      const loginView = document.getElementById('teacher-login-view');
+      const activeView = document.getElementById('teacher-active-view');
+      const errorEl = document.getElementById('teacher-login-error');
+      const titleEl = document.getElementById('teacher-modal-title');
+      const passInput = document.getElementById('teacher-password-input');
+
+      if (errorEl) errorEl.classList.add('hidden');
+      if (passInput) passInput.value = '';
+
+      if (currentRoleMode === 'teacher') {
+        if (titleEl) titleEl.textContent = '教員モード管理';
+        if (loginView) loginView.classList.add('hidden');
+        if (activeView) activeView.classList.remove('hidden');
+      } else {
+        if (titleEl) titleEl.textContent = '教員モード認証';
+        if (loginView) loginView.classList.remove('hidden');
+        if (activeView) activeView.classList.add('hidden');
+      }
+
+      openModal('teacher-auth-modal');
+      if (currentRoleMode !== 'teacher' && passInput) {
+        setTimeout(() => passInput.focus(), 150);
+      }
+    }
+
+    function authenticateTeacher() {
+      const input = document.getElementById('teacher-password-input')?.value.trim();
+      const currentPass = getTeacherPassword();
+      const errorEl = document.getElementById('teacher-login-error');
+
+      if (input === currentPass) {
+        currentRoleMode = 'teacher';
+        updateRoleModeUI();
+        closeModal('teacher-auth-modal');
+      } else {
+        if (errorEl) errorEl.classList.remove('hidden');
+      }
+    }
+
+    function logoutTeacherMode() {
+      currentRoleMode = 'student';
+      updateRoleModeUI();
+      closeModal('teacher-auth-modal');
+    }
+
+    function changeTeacherPassword() {
+      const newPass = document.getElementById('new-teacher-password')?.value.trim();
+      const msgEl = document.getElementById('password-change-msg');
+      if (!newPass || newPass.length < 4) {
+        alert('新しいパスワードは4文字以上で設定してください。');
+        return;
+      }
+      localStorage.setItem('ot_teacher_password', newPass);
+      if (msgEl) {
+        msgEl.textContent = 'パスワードを更新しました。次回からこのパスワードをご使用ください。';
+        msgEl.classList.remove('hidden');
+        setTimeout(() => msgEl.classList.add('hidden'), 4000);
+      }
+      document.getElementById('new-teacher-password').value = '';
+    }
+
+    function togglePasswordVisibility(inputId) {
+      const el = document.getElementById(inputId);
+      if (el) el.type = el.type === 'password' ? 'text' : 'password';
+    }
+
+    function updateRoleModeUI() {
+      const roleBtn = document.getElementById('role-mode-btn');
+      const roleIcon = document.getElementById('role-mode-icon');
+      const roleText = document.getElementById('role-mode-text');
+      const githubNavBtn = document.getElementById('nav-github-btn');
+      const storageGithubBanner = document.getElementById('storage-github-banner');
+
+      if (currentRoleMode === 'teacher') {
+        if (roleBtn) {
+          roleBtn.className = 'text-xs px-2.5 py-1.5 rounded font-bold flex items-center gap-1.5 transition shadow-xs border bg-amber-700 hover:bg-amber-600 text-white border-amber-500';
+          roleBtn.title = '現在【教員モード】です。クリックして管理・ログアウト';
+        }
+        if (roleIcon) roleIcon.className = 'fa-solid fa-chalkboard-user text-amber-200';
+        if (roleText) roleText.textContent = '教員モード中';
+        if (githubNavBtn) githubNavBtn.classList.remove('hidden');
+        if (storageGithubBanner) storageGithubBanner.classList.remove('hidden');
+      } else {
+        if (roleBtn) {
+          roleBtn.className = 'text-xs px-2.5 py-1.5 rounded font-bold flex items-center gap-1.5 transition shadow-xs border bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-600';
+          roleBtn.title = '現在【学生モード】です。教員の方はこちらから切替';
+        }
+        if (roleIcon) roleIcon.className = 'fa-solid fa-user-graduate text-emerald-400';
+        if (roleText) roleText.textContent = '学生モード';
+        if (githubNavBtn) githubNavBtn.classList.add('hidden');
+        if (storageGithubBanner) storageGithubBanner.classList.add('hidden');
+      }
+    }
+
+    function openGitHubExportModal() {
+      if (currentRoleMode !== 'teacher') {
+        openTeacherAuthModal();
+        return;
+      }
+      openModal('github-export-modal');
     }
 
     function copyCurrentDataToEdition(targetEditionId) {
@@ -6535,6 +6895,387 @@ ${evalDetails.join('\n') || '評価項目未入力'}
       openModal('report-modal');
     }
 
+    function exportReportToWord() {
+      updateTables();
+      const state = collectCurrentState();
+      const step1Table = document.getElementById('step1-table-container')?.innerHTML || '';
+      const compTable = document.getElementById('comparison-table-container')?.innerHTML || '';
+
+      const studentId = state.student?.id || '';
+      const studentName = state.student?.name || '';
+      const docHeaderMeta = `提出者: ${escapeHtml(studentName || '実習生')} ${studentId ? `[学籍番号: ${escapeHtml(studentId)}]` : ''} ｜ 領域: ${escapeHtml(state.info.domain)}`;
+      const docFooterPrivacy = `【個人情報保護・学外秘】 本報告書は作業療法臨床実習教育目的以外での複製・閲覧・外部持ち出しを禁じます。`;
+
+      let programsRows = '';
+      state.plan.programs.forEach(p => {
+        if (!p.name && !p.detail && !p.rationale) return;
+        programsRows += `
+          <tr>
+            <td style="border: 1pt solid #94a3b8; padding: 5pt; font-weight: bold; width: 25%; vertical-align: top; background-color: #fafafa;">${escapeHtml(p.name)}</td>
+            <td style="border: 1pt solid #94a3b8; padding: 5pt; vertical-align: top; white-space: pre-wrap; width: 40%;">${escapeHtml(p.detail)}</td>
+            <td style="border: 1pt solid #94a3b8; padding: 5pt; vertical-align: top; white-space: pre-wrap; width: 35%;">${escapeHtml(p.rationale)}</td>
+          </tr>`;
+      });
+      const programsWordTable = `
+        <table style="width: 100%; border-collapse: collapse; margin-top: 6pt; font-size: 8.5pt;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="border: 1pt solid #94a3b8; padding: 5pt; text-align: left; width: 25%;">プログラム名</th>
+              <th style="border: 1pt solid #94a3b8; padding: 5pt; text-align: left; width: 40%;">具体的な内容・負荷・リスク管理</th>
+              <th style="border: 1pt solid #94a3b8; padding: 5pt; text-align: left; width: 35%;">選択した根拠（Rationale）</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${programsRows || '<tr><td colspan="3" style="border: 1pt solid #94a3b8; padding: 6pt; text-align: center; color: #94a3b8;">（プログラム未登録）</td></tr>'}
+          </tbody>
+        </table>`;
+
+      let soapWordHtml = '';
+      if (state.soapNotes && state.soapNotes.length > 0) {
+        soapWordHtml = `
+          <div style="page-break-before: always; mso-break-type: section-break;"></div>
+          <table class="header-table" style="width: 100%; margin-bottom: 6pt; border-bottom: 0.5pt solid #cbd5e1; font-size: 8pt; color: #64748b;">
+            <tr>
+              <td style="text-align: left; border: none; padding: 0;">作業療法臨床実習 症例報告書［デイリーノート経過］</td>
+              <td style="text-align: right; border: none; padding: 0;">${docHeaderMeta}</td>
+            </tr>
+          </table>
+
+          <div class="section-heading">■ 6. デイリーノート（SOAP経過記録一覧 全${state.soapNotes.length}回）</div>
+          <p style="font-size: 8pt; color: #64748b; margin-top: 2pt; margin-bottom: 6pt;">※目標達成に向けた臨床推論と動作変容プロセス</p>
+
+          ${state.soapNotes.map((n, i) => `
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 8pt; border: 1pt solid #cbd5e1; font-size: 8.5pt;">
+              <tr style="background-color: #f8fafc;">
+                <th colspan="2" style="border: 1pt solid #cbd5e1; padding: 4pt 6pt; color: #042f2e;">
+                  #${i + 1} ${escapeHtml(n.date)} ${n.programs?.length ? `（実施：${escapeHtml(n.programs.join(' / '))}）` : ''}
+                  <span style="float: right; font-weight: normal; font-size: 8pt; color: #475569;">${escapeHtml(n.vital || '')}</span>
+                </th>
+              </tr>
+              <tr>
+                <td style="width: 12%; border: 1pt solid #cbd5e1; padding: 4pt 6pt; background-color: #f0f9ff; font-weight: bold; color: #0369a1; text-align: center;">【S】</td>
+                <td style="border: 1pt solid #cbd5e1; padding: 4pt 6pt; white-space: pre-wrap;">${escapeHtml(n.s)}</td>
+              </tr>
+              <tr>
+                <td style="width: 12%; border: 1pt solid #cbd5e1; padding: 4pt 6pt; background-color: #ecfdf5; font-weight: bold; color: #047857; text-align: center;">【O】</td>
+                <td style="border: 1pt solid #cbd5e1; padding: 4pt 6pt; white-space: pre-wrap;">${escapeHtml(n.o)}</td>
+              </tr>
+              <tr>
+                <td style="width: 12%; border: 1pt solid #cbd5e1; padding: 4pt 6pt; background-color: #fffbeb; font-weight: bold; color: #b45309; text-align: center;">【A】</td>
+                <td style="border: 1pt solid #cbd5e1; padding: 4pt 6pt; white-space: pre-wrap;">${escapeHtml(n.a)}</td>
+              </tr>
+              <tr>
+                <td style="width: 12%; border: 1pt solid #cbd5e1; padding: 4pt 6pt; background-color: #eef2ff; font-weight: bold; color: #4338ca; text-align: center;">【P】</td>
+                <td style="border: 1pt solid #cbd5e1; padding: 4pt 6pt; white-space: pre-wrap;">${escapeHtml(n.p)}</td>
+              </tr>
+            </table>
+          `).join('')}
+
+          <div class="footer-privacy">
+            ${docFooterPrivacy}<br/>症例: ${escapeHtml(state.info.id || '匿名')} ｜ ${escapeHtml(state.updatedAt)}
+          </div>
+        `;
+      }
+
+      const wordHtml = `
+        <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+        <head>
+          <meta charset="utf-8">
+          <title>作業療法臨床実習 症例報告書</title>
+          <!--[if gte mso 9]>
+          <xml>
+            <w:WordDocument>
+              <w:View>Print</w:View>
+              <w:Zoom>100</w:Zoom>
+              <w:DoNotOptimizeForBrowser/>
+            </w:WordDocument>
+          </xml>
+          <![endif]-->
+          <style>
+            @page Section1 {
+              size: 595.3pt 841.9pt;
+              margin: 40pt 42pt 40pt 42pt;
+              mso-header-margin: 28pt;
+              mso-footer-margin: 28pt;
+              mso-paper-source: 0;
+            }
+            div.Section1 { page: Section1; }
+            body {
+              font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'MS Mincho', serif;
+              font-size: 9.5pt;
+              line-height: 1.5;
+              color: #1e293b;
+            }
+            h1 {
+              font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+              font-size: 13.5pt;
+              font-weight: bold;
+              color: #042f2e;
+              margin: 0 0 3pt 0;
+            }
+            .section-heading {
+              font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+              font-size: 10.5pt;
+              font-weight: bold;
+              color: #115e59;
+              background-color: #f0fdfa;
+              border-left: 4pt solid #0f766e;
+              border-bottom: 1pt solid #ccfbf1;
+              padding: 3pt 6pt;
+              margin-top: 10pt;
+              margin-bottom: 4pt;
+            }
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 4pt;
+              margin-bottom: 6pt;
+              font-size: 8.5pt;
+            }
+            th, td {
+              border: 1pt solid #94a3b8;
+              padding: 4pt 6pt;
+              vertical-align: top;
+            }
+            th {
+              background-color: #f1f5f9;
+              font-weight: bold;
+              color: #0f172a;
+              text-align: left;
+            }
+            .header-table td {
+              border: none;
+              padding: 2pt 0;
+            }
+            .footer-privacy {
+              font-size: 7.5pt;
+              color: #64748b;
+              border-top: 0.5pt solid #cbd5e1;
+              margin-top: 12pt;
+              padding-top: 3pt;
+              text-align: center;
+            }
+          </style>
+        </head>
+        <body>
+        <div class="Section1">
+          <!-- ページ上部ランニングヘッダー -->
+          <table class="header-table" style="width: 100%; margin-bottom: 6pt; border-bottom: 0.5pt solid #cbd5e1; font-size: 8pt; color: #64748b;">
+            <tr>
+              <td style="text-align: left; border: none;">作業療法臨床実習 症例サマリー・前後比較レポート</td>
+              <td style="text-align: right; border: none;">${docHeaderMeta}</td>
+            </tr>
+          </table>
+
+          <!-- レポート表紙ヘッダー -->
+          <table class="header-table" style="width: 100%; margin-bottom: 10pt; border-bottom: 2pt solid #0f766e; padding-bottom: 4pt;">
+            <tr>
+              <td style="vertical-align: bottom; width: 65%; border: none;">
+                <span style="font-size: 8pt; background-color: #ccfbf1; color: #115e59; font-weight: bold; padding: 2pt 4pt; border-radius: 2pt;">作業療法臨床実習</span>
+                <span style="font-size: 8pt; background-color: #f1f5f9; color: #334155; font-weight: bold; padding: 2pt 4pt; border-radius: 2pt;">${escapeHtml(state.plan.stage)}</span>
+                <h1 style="margin-top: 4pt;">作業療法臨床実習 症例サマリー・SOAP日誌・前後比較レポート</h1>
+                <div style="font-size: 8.5pt; color: #475569;">
+                  対象領域：<strong>${escapeHtml(state.info.domain)}</strong> ｜ 症例識別：<strong>${escapeHtml(state.info.id || '未記入')}</strong>
+                </div>
+              </td>
+              <td style="vertical-align: bottom; text-align: right; width: 35%; border: none;">
+                <div style="background-color: #f0fdfa; border: 1pt solid #5eead4; padding: 4pt 8pt; display: inline-block; text-align: left; font-size: 8.5pt;">
+                  <span style="color: #0f766e; font-weight: bold;">実習生（提出者）：</span>
+                  <strong>${escapeHtml(studentName || '（未登録）')}</strong>
+                  ${studentId ? `<br/><span style="color: #64748b; font-size: 8pt;">学籍番号: ${escapeHtml(studentId)}</span>` : ''}
+                </div>
+                <div style="font-size: 8pt; color: #64748b; margin-top: 3pt;">出力日時：${escapeHtml(state.updatedAt)}</div>
+              </td>
+            </tr>
+          </table>
+
+          <!-- 1. 基本情報・医学情報 -->
+          <div class="section-heading">■ 1. 基本情報・医学情報・他部門情報</div>
+          <div>${step1Table}</div>
+
+          <!-- 2. 初期・最終評価 前後比較表 -->
+          <div class="section-heading">■ 3. 作業療法評価 初期評価・最終評価（再評価）前後比較表</div>
+          <div>${compTable}</div>
+
+          <div class="footer-privacy">
+            ${docFooterPrivacy}<br/>症例: ${escapeHtml(state.info.id || '匿名')} ｜ ${escapeHtml(state.updatedAt)}
+          </div>
+
+          <!-- ==================== 第2部：ICF生活機能分析 ＆ 目標・プログラム計画 ==================== -->
+          <div style="page-break-before: always; mso-break-type: section-break;"></div>
+          <table class="header-table" style="width: 100%; margin-bottom: 6pt; border-bottom: 0.5pt solid #cbd5e1; font-size: 8pt; color: #64748b;">
+            <tr>
+              <td style="text-align: left; border: none;">作業療法臨床実習 症例報告書［ICF ＆ 目標・介入計画］</td>
+              <td style="text-align: right; border: none;">${docHeaderMeta}</td>
+            </tr>
+          </table>
+
+          <div class="section-heading">■ 4. ICF（国際生活機能分類）による全体像の整理</div>
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 6pt; font-size: 8.5pt;">
+            <tr>
+              <td colspan="3" style="border: 1pt solid #94a3b8; padding: 6pt; background-color: #f8fafc; text-align: center;">
+                <strong style="color: #042f2e; font-size: 9.5pt;">【健康状態（診断名・病態・医療処置・リスク）】</strong><br/>
+                <div style="white-space: pre-wrap; font-size: 8.5pt; margin-top: 2pt;">${escapeHtml(state.icf.health || '未記入')}</div>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 33.3%; vertical-align: top; border: 1pt solid #94a3b8; padding: 6pt; background-color: #ffffff;">
+                <strong style="color: #0f766e; font-size: 9pt; border-bottom: 1pt solid #e2e8f0; display: block; padding-bottom: 2pt; margin-bottom: 3pt;">【心身機能・身体構造】</strong>
+                <div style="white-space: pre-wrap; font-size: 8.5pt;">${escapeHtml(state.icf.body || '未記入')}</div>
+              </td>
+              <td style="width: 33.3%; vertical-align: top; border: 1pt solid #94a3b8; padding: 6pt; background-color: #ffffff;">
+                <strong style="color: #0f766e; font-size: 9pt; border-bottom: 1pt solid #e2e8f0; display: block; padding-bottom: 2pt; margin-bottom: 3pt;">【活動】</strong>
+                <div style="white-space: pre-wrap; font-size: 8.5pt;">${escapeHtml(state.icf.activity || '未記入')}</div>
+              </td>
+              <td style="width: 33.3%; vertical-align: top; border: 1pt solid #94a3b8; padding: 6pt; background-color: #ffffff;">
+                <strong style="color: #0f766e; font-size: 9pt; border-bottom: 1pt solid #e2e8f0; display: block; padding-bottom: 2pt; margin-bottom: 3pt;">【参加】</strong>
+                <div style="white-space: pre-wrap; font-size: 8.5pt;">${escapeHtml(state.icf.participation || '未記入')}</div>
+              </td>
+            </tr>
+          </table>
+
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 8pt; font-size: 8.5pt;">
+            <tr>
+              <td style="width: 50%; vertical-align: top; border: 1pt solid #94a3b8; padding: 6pt; background-color: #ffffff;">
+                <strong style="color: #0f766e; font-size: 9pt; border-bottom: 1pt solid #e2e8f0; display: block; padding-bottom: 2pt; margin-bottom: 3pt;">【環境因子】</strong>
+                <div style="white-space: pre-wrap; font-size: 8.5pt;">${escapeHtml(state.icf.environment || '未記入')}</div>
+              </td>
+              <td style="width: 50%; vertical-align: top; border: 1pt solid #94a3b8; padding: 6pt; background-color: #ffffff;">
+                <strong style="color: #0f766e; font-size: 9pt; border-bottom: 1pt solid #e2e8f0; display: block; padding-bottom: 2pt; margin-bottom: 3pt;">【個人因子】</strong>
+                <div style="white-space: pre-wrap; font-size: 8.5pt;">${escapeHtml(state.icf.personal || '未記入')}</div>
+              </td>
+            </tr>
+          </table>
+
+          <!-- 4. 統合と解釈・目標設定・プログラム -->
+          <div class="section-heading">■ 5. 統合と解釈・目標設定・作業療法プログラム</div>
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 6pt; font-size: 8.5pt;">
+            <tr>
+              <td style="border: 1pt solid #94a3b8; padding: 6pt; background-color: #ffffff;">
+                <strong style="color: #334155; font-size: 9pt;">【臨床推論・統合と解釈】</strong>
+                <div style="white-space: pre-wrap; font-size: 8.5pt; margin-top: 2pt;">${escapeHtml(state.plan.interpretation || '未記入')}</div>
+              </td>
+            </tr>
+          </table>
+
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 6pt; font-size: 8.5pt;">
+            <tr>
+              <td style="width: 50%; vertical-align: top; border: 1pt solid #94a3b8; padding: 6pt; background-color: #f0fdfa;">
+                <strong style="color: #115e59; font-size: 9pt;">【短期目標（STG）】</strong>
+                <div style="white-space: pre-wrap; font-size: 8.5pt; margin-top: 2pt;">${escapeHtml(state.plan.stg || '未記入')}</div>
+              </td>
+              <td style="width: 50%; vertical-align: top; border: 1pt solid #94a3b8; padding: 6pt; background-color: #eef2ff;">
+                <strong style="color: #3730a3; font-size: 9pt;">【長期目標（LTG）】</strong>
+                <div style="white-space: pre-wrap; font-size: 8.5pt; margin-top: 2pt;">${escapeHtml(state.plan.ltg || '未記入')}</div>
+              </td>
+            </tr>
+          </table>
+
+          ${programsWordTable}
+
+          <div class="footer-privacy">
+            ${docFooterPrivacy}<br/>症例: ${escapeHtml(state.info.id || '匿名')} ｜ ${escapeHtml(state.updatedAt)}
+          </div>
+
+          <!-- ==================== 第3部：デイリーノート（SOAP日誌一覧） ==================== -->
+          ${soapWordHtml}
+
+          <!-- ==================== 第4部：最終効果判定・考察 ＆ SV確認印・コメント欄 ==================== -->
+          <div style="page-break-before: always; mso-break-type: section-break;"></div>
+          <table class="header-table" style="width: 100%; margin-bottom: 6pt; border-bottom: 0.5pt solid #cbd5e1; font-size: 8pt; color: #64748b;">
+            <tr>
+              <td style="text-align: left; border: none;">作業療法臨床実習 症例報告書［効果判定・考察 ＆ 指導者確認印］</td>
+              <td style="text-align: right; border: none;">${docHeaderMeta}</td>
+            </tr>
+          </table>
+
+          <div class="section-heading">■ 7. 最終評価に基づく効果判定・目標達成度・今後の課題（考察）</div>
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 8pt; font-size: 8.5pt;">
+            <tr>
+              <td style="border: 1pt solid #94a3b8; padding: 6pt; background-color: #ffffff;">
+                <div style="margin-bottom: 4pt;">
+                  <strong style="color: #042f2e; font-size: 9pt;">【短期目標達成度】：</strong>
+                  <span style="background-color: #ccfbf1; color: #115e59; font-weight: bold; padding: 1.5pt 5pt; border-radius: 2pt;">${escapeHtml(state.reEval.goalAchievement || '―')}</span>
+                </div>
+                <div style="border-top: 0.5pt solid #cbd5e1; padding-top: 4pt; margin-top: 4pt;">
+                  <strong style="color: #1e293b; font-size: 9pt;">【初期・最終評価の比較と効果判定・変化の要因分析（考察）】</strong>
+                  <div style="white-space: pre-wrap; font-size: 8.5pt; margin-top: 2pt;">${escapeHtml(state.reEval.effectAnalysis || '未記入')}</div>
+                </div>
+                <div style="border-top: 0.5pt solid #cbd5e1; padding-top: 4pt; margin-top: 4pt;">
+                  <strong style="color: #1e293b; font-size: 9pt;">【今後の課題・退院後生活／次期申し送り事項】</strong>
+                  <div style="white-space: pre-wrap; font-size: 8.5pt; margin-top: 2pt;">${escapeHtml(state.reEval.nextPlan || '未記入')}</div>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <!-- 臨床実習指導者（SV）確認印と指導助言コメント欄 -->
+          <table style="width: 100%; border-collapse: collapse; border: 2pt solid #334155; margin-top: 10pt; font-size: 8.5pt; background-color: #f8fafc;">
+            <tr style="background-color: #f1f5f9; border-bottom: 1pt solid #cbd5e1;">
+              <th colspan="2" style="padding: 4pt 8pt; color: #0f172a; font-size: 9.5pt;">
+                ■ 臨床実習指導者（SV）確認印 ＆ 指導・助言コメント欄
+                <span style="float: right; font-weight: normal; font-size: 7.5pt; color: #64748b;">※養成校提出・臨床実習施設保管用</span>
+              </th>
+            </tr>
+            <tr>
+              <td style="width: 75%; vertical-align: top; border-right: 1pt solid #cbd5e1; padding: 8pt;">
+                <div style="font-weight: bold; color: #334155; font-size: 8.5pt; margin-bottom: 4pt;">
+                  実習指導者（SV）指導・助言コメント（臨床推論・SOAP記録・今後の課題に対するフィードバック）
+                </div>
+                <div style="min-height: 90pt; border: 1pt dashed #94a3b8; background-color: #ffffff; padding: 6pt; color: #94a3b8; font-size: 8.5pt;">
+                  （指導者コメント・所見記入スペース）
+                </div>
+                <table style="width: 100%; margin-top: 6pt; border: none; font-size: 8pt; color: #334155;">
+                  <tr>
+                    <td style="border: none; padding: 0;">指導判定： ［ 優 ・ 良 ・ 可 ・ 要修正 / 再提出 ］</td>
+                    <td style="border: none; padding: 0; text-align: right;">指導者確認日： 令和　　年　　月　　日</td>
+                  </tr>
+                </table>
+              </td>
+              <td style="width: 25%; vertical-align: top; padding: 8pt; text-align: center;">
+                <div style="font-weight: bold; color: #1e293b; font-size: 8pt; margin-bottom: 2pt;">実習指導者（SV）印</div>
+                <div style="width: 54pt; height: 54pt; border: 1.5pt dashed #94a3b8; background-color: #ffffff; margin: 3pt auto; line-height: 54pt; color: #94a3b8; font-size: 9pt; font-weight: bold;">
+                  印
+                </div>
+                <div style="font-weight: bold; color: #475569; font-size: 7.5pt; margin-top: 6pt; margin-bottom: 2pt;">養成校教員 / 責任者印</div>
+                <div style="width: 44pt; height: 44pt; border: 1pt dashed #cbd5e1; background-color: #ffffff; margin: 2pt auto; line-height: 44pt; color: #cbd5e1; font-size: 8pt;">
+                  印
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <div class="footer-privacy">
+            ${docFooterPrivacy}<br/>症例: ${escapeHtml(state.info.id || '匿名')} ｜ ${escapeHtml(state.updatedAt)}
+          </div>
+        </div>
+        </body>
+        </html>
+      `;
+
+      const blob = new Blob(['\ufeff' + wordHtml], {
+        type: 'application/msword;charset=utf-8'
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      const safeId = (state.info.id || '症例報告書').replace(/[\\/:*?"<>|\s]/g, '_');
+      const safeDate = new Date().toISOString().slice(0, 10);
+      a.download = `[作業療法症例報告書]_${safeId}_${safeDate}.doc`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      const noticeEl = document.getElementById('word-export-notice');
+      if (noticeEl) {
+        noticeEl.classList.remove('hidden');
+        setTimeout(() => {
+          noticeEl.classList.add('hidden');
+        }, 6000);
+      }
+    }
+
     function openModal(id) {
       if (id === 'storage-modal') renderSavedSlotsList();
       document.getElementById(id).classList.remove('hidden');
@@ -6682,5 +7423,5 @@ ${evalDetails.join('\n') || '評価項目未入力'}
     }
 
   </script>
-
-</body></html>
+</body>
+</html>
