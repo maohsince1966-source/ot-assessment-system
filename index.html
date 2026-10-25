@@ -259,7 +259,8 @@
           <option value="case_rework">【精神・リワーク】うつ病・復職支援・就労準備（38歳男性）</option>
           <option value="case_dev">【発達・小児】ASD・発達性協調運動障害（7歳男児）</option>
           <option value="case_cp">【発達・小児】脳性麻痺 痙直型両麻痺（5歳男児・就学支援）</option>
-          <option value="case_internal">【内部障害】COPD急性増悪後（78歳男性）</option>
+          <option value="case_cardiac">【内部・心疾患】慢性心不全・心臓リハビリ（74歳男性）</option>
+          <option value="case_internal">【内部・呼吸器】COPD急性増悪後・HOT導入（78歳男性）</option>
           <option value="case_cancer">【内部・緩和】肺がん骨転移・緩和ケア期（66歳男性）</option>
           <option value="case_hbd">【身体・高次脳】外傷性脳損傷・前頭葉損傷（46歳男性・復職支援）</option>
         </select>
@@ -617,7 +618,9 @@
           <button onclick="filterAssessmentChips('精神科疾患別')" data-filter="精神科疾患別" class="domain-btn bg-violet-100 hover:bg-violet-200 text-violet-950 text-xs font-bold px-3 py-1.5 rounded-full transition">🧠 精神科疾患別（気分・不安・依存・摂食・BPD）</button>
           <button onclick="filterAssessmentChips('発達・小児')" data-filter="発達・小児" class="domain-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full transition">🧸 発達・小児</button>
           <button onclick="filterAssessmentChips('脳性麻痺')" data-filter="脳性麻痺" class="domain-btn bg-pink-100 hover:bg-pink-200 text-pink-950 text-xs font-bold px-3 py-1.5 rounded-full transition">🚼 脳性麻痺 (CP)</button>
-          <button onclick="filterAssessmentChips('内部障害')" data-filter="内部障害" class="domain-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full transition">🫁 内部障害</button>
+          <button onclick="filterAssessmentChips('内部障害')" data-filter="内部障害" class="domain-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full transition">🫁 内部障害（全般）</button>
+          <button onclick="filterAssessmentChips('心疾患（循環器）')" data-filter="心疾患（循環器）" class="domain-btn bg-rose-100 hover:bg-rose-200 text-rose-950 text-xs font-bold px-3 py-1.5 rounded-full transition">❤️ 心疾患（循環器）</button>
+          <button onclick="filterAssessmentChips('呼吸器疾患')" data-filter="呼吸器疾患" class="domain-btn bg-cyan-100 hover:bg-cyan-200 text-cyan-950 text-xs font-bold px-3 py-1.5 rounded-full transition">🫁 呼吸器疾患</button>
           <button onclick="filterAssessmentChips('がん・緩和ケア')" data-filter="がん・緩和ケア" class="domain-btn bg-purple-100 hover:bg-purple-200 text-purple-900 text-xs font-bold px-3 py-1.5 rounded-full transition">🎗️ がん・緩和ケア</button>
           <button onclick="filterAssessmentChips('ADL・作業・共通')" data-filter="ADL・作業・共通" class="domain-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full transition">🏠 ADL・作業・共通</button>
         </div>
@@ -2654,11 +2657,192 @@
         ]
       },
 
-      // --- 内部障害領域 ---
+      // --- 内部障害：心疾患（心不全・虚血性心疾患・心臓血管外科術後など） ---
+      {
+        id: 'cardiac_severity_lab',
+        name: '心疾患：重症度・心機能・血液検査データ（NYHA心機能分類・LVEF・BNP / NT-proBNP・eGFR・Hb）',
+        domain: '内部障害',
+        subgroup: '心疾患・循環器',
+        fields: [
+          {
+            key: 'nyha_lvef',
+            label: 'NYHA心機能分類（I〜IV度）および左室駆出率（心エコー LVEF %：収縮不全HFrEF/拡張不全HFpEF）',
+            unit: '%',
+            polar: 'higher',
+            placeholder: '例: NYHA II度（中等度の日常労作で息切れ・動悸）。心エコー LVEF 42%（HFmrEF：左室収縮能軽度低下、前壁中隔壁運動低下）'
+          },
+          {
+            key: 'bnp_egfr_hb',
+            label: '心負荷マーカー（BNP / NT-proBNP pg/mL）・腎機能（eGFR mL/min）・貧血（Hb g/dL）',
+            unit: 'pg/mL',
+            polar: 'lower',
+            placeholder: '例: BNP 285 pg/mL（心負荷増定）、eGFR 46.2 mL/min/1.73m²（心腎連関・CKD Stage 3a併存）、Hb 10.4 g/dL（軽度貧血）'
+          }
+        ]
+      },
+      {
+        id: 'cardiac_congestion_vitals',
+        name: '心疾患：うっ血所見・臨床症状・バイタルサイン・リスク管理（BP・HR・不整脈・下腿浮腫・頸静脈怒張・体重急増・起坐呼吸）',
+        domain: '内部障害',
+        subgroup: '心疾患・循環器',
+        fields: [
+          {
+            key: 'vitals_arrhythmia',
+            label: '安静時・労作時バイタル（BP・HR・SpO2）および不整脈（心房細動AF・心室性期外収縮PVC）・胸部症状',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: 安静時 BP 118/74 mmHg, HR 68 bpm整, SpO2 97%（room air）。労作時BP 132/80, HR 86 bpm。散発性PVCあり。胸痛・冷汗なし'
+          },
+          {
+            key: 'congestion_edema_weight',
+            label: 'うっ血徴候（下腿圧痕性浮腫・頸静脈怒張・1週2kg以上体重増加）および夜間発作性呼吸困難・起坐呼吸',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: 両側下腿前面に軽度圧痕性浮腫（+）。頸静脈怒張なし。ドライウェイト56.2kgに対し現在56.6kg（+0.4kgで安定）。起坐呼吸なし'
+          }
+        ]
+      },
+      {
+        id: 'cardiac_mets_rpp_adl',
+        name: '心疾患：運動耐容能・ADL時の心負荷評価（6MD / CPX処方心拍数・RPP二重積・修正Borg・入浴/排便/上肢挙上作業）',
+        domain: '内部障害',
+        subgroup: '心疾患・循環器',
+        fields: [
+          {
+            key: 'tolerance_6md_cpx',
+            label: '6分間歩行試験（6MD / m）またはCPX（AT処方心拍数・peak VO2・二重積RPP＝収縮期血圧×心拍数）',
+            unit: 'm',
+            polar: 'higher',
+            placeholder: '例: 6MD 340m（修正Borg 12/20）。CPX AT心拍数 96 bpm（処方上限心拍数遵守）。安静時RPP 8,024 → 労作時RPP 11,352（許容範囲内）'
+          },
+          {
+            key: 'adl_cardiac_load',
+            label: '高負荷ADL（整容・更衣・排泄いきみ・入浴シャワー・階段・洗濯上肢挙上）の脈拍変動と修正Borg（胸痛・息切れ・疲労感）',
+            unit: '点',
+            polar: 'lower',
+            placeholder: '例: シャワー浴時 HR 92 bpm（+24 bpm上昇・許容内）、修正Borg 3。排便時のいきみ回避（緩下剤調整＋温水洗浄）、洗濯物干しは胸の高さ台を使用'
+          }
+        ]
+      },
+      {
+        id: 'cardiac_selfcare_prevention',
+        name: '心疾患：疾病管理・再発予防のセルフケア行動評価（毎朝の体重血圧記録・減塩水分制限・服薬管理・活動ペーシング）',
+        domain: '内部障害',
+        subgroup: '心疾患・循環器',
+        fields: [
+          {
+            key: 'monitoring_log_salt_fluid',
+            label: '毎朝の体重・血圧測定と「心臓病手帳」自己記録習慣、減塩（6g/日未満）・水分制限の理解と遵守状況',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: 毎朝排尿後の体重・血圧測定を手帳に毎日自発記録可能。減塩目標6g/日を理解し麺類の汁を残す習慣定着。水分制限1,000mL/日遵守良好'
+          },
+          {
+            key: 'medication_activity_pacing',
+            label: '服薬管理（抗凝固薬・利尿薬・β遮断薬等）および過労・過活動を防ぐ活動ペーシング・休息配分',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: お薬カレンダーを用いて利尿薬・β遮断薬の自己管理自立（飲み忘れ0件）。家事・買い物時は連続30分活動で10分休息を挟むペーシング行動確立'
+          }
+        ]
+      },
+
+      // --- 内部障害：呼吸器疾患（COPD・間質性肺炎・誤嚥性肺炎後・肺がん術後など） ---
+      {
+        id: 'resp_severity_pulmonary_lab',
+        name: '呼吸器：重症度・呼吸機能・画像血液データ（mMRC・Hugh-Jones・スパイロメトリー・動脈血ガスABG・KL-6・画像所見）',
+        domain: '内部障害',
+        subgroup: '呼吸器疾患',
+        fields: [
+          {
+            key: 'dyspnea_grade_spiro',
+            label: '息切れ重症度（mMRC質問票 Grade 0〜4 / Hugh-Jones分類 I〜V度）およびスパイロメトリー（%VC、FEV1.0%、%FEV1）',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: mMRC Grade 3（平地で同年代より歩行が遅く、自分のペースで歩行中に息切れのため立ち止まる）。スパイロ：FEV1.0% 48.2%（重症閉塞性換気障害・COPD Stage III）'
+          },
+          {
+            key: 'gas_kl6_imaging',
+            label: '動脈血ガス分析（PaO2、PaCO2：CO2ナルコーシスリスク確認）・KL-6（間質性肺炎マーカー）・胸部X線/CT（肺気腫・線維化）',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: 血液ガス（room air）：PaO2 58 Torr、PaCO2 43 Torr（高二酸化炭素血症なし、過度な高濃度酸素によるCO2ナルコーシス注意）。胸部CT：両側肺野の著明な気腫性変化'
+          }
+        ]
+      },
+      {
+        id: 'resp_pattern_mechanics_nutrition',
+        name: '呼吸器：呼吸様式・胸郭可動性・排痰・栄養状態（呼吸数・口すぼめ腹式呼吸・胸郭拡張差・咳嗽力・BMI/るい痩サルコペニア）',
+        domain: '内部障害',
+        subgroup: '呼吸器疾患',
+        fields: [
+          {
+            key: 'resp_pattern_chest_expansion',
+            label: '呼吸数・リズム、呼吸様式（口すぼめ呼吸・腹式呼吸の定着度、胸鎖乳突筋等補助筋過緊張・肩呼吸、奇異性呼吸）、胸郭拡張差（腋窩・剣状突起）',
+            unit: 'cm',
+            polar: 'higher',
+            placeholder: '例: 安静時呼吸数 22回/分（浅速呼吸）。労作時に肩呼吸・頸部補助筋過緊張あり。口すぼめ呼吸促しで呼気延長可能。胸郭拡張差：腋窩2.0cm、剣状突起1.5cm（可動性低下）'
+          },
+          {
+            key: 'sputum_cough_nutrition',
+            label: '咳嗽力・喀痰排出状況（Huffingハッフィング等）および栄養指標（BMI、Alb、呼吸不全るい痩・サルコペニア）',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: 有効な自己咳嗽力あり。ハッフィング指導にて労作を抑えた排痰が可能。BMI 18.2 kg/m²（るい痩傾向）、Alb 3.4 g/dL。高カロリー分割摂取の指導と連携'
+          }
+        ]
+      },
+      {
+        id: 'resp_endurance_adl_desaturation',
+        name: '呼吸器：運動耐容能・ADL時のSpO2低下と息切れ評価（6MD・洗髪/更衣/靴下/しゃがみ時SpO2・呼吸同調・息こらえ癖）',
+        domain: '内部障害',
+        subgroup: '呼吸器疾患',
+        fields: [
+          {
+            key: 'tolerance_6md_spo2',
+            label: '6分間歩行試験（6MD：歩行距離 m、最低SpO2 %、回復時間、修正Borg呼吸困難感）',
+            unit: 'm',
+            polar: 'higher',
+            placeholder: '例: 6MD 280m（HOT 2L/分吸入下）。最低SpO2 86%（労作時デサチュレーションあり）、回復時間2分30秒。歩行終了時 修正Borg 5（強い息切れ）'
+          },
+          {
+            key: 'adl_desat_pacing_panic',
+            label: 'ADL動作時（洗髪・洗体・靴下着脱・しゃがみ・前屈・上肢挙上）のSpO2・修正Borg、息こらえ（バルサルバ）癖、呼吸同調動作・環境調整',
+            unit: '点',
+            polar: 'lower',
+            placeholder: '例: 洗髪・洗体時に前屈位での息こらえありSpO2 84%へ急低下。シャワーチェア導入、呼気に合わせた「息を吐きながら腕を上げる」呼吸同調習得でSpO2 91%維持'
+          }
+        ]
+      },
+      {
+        id: 'resp_hot_selfcare_infection',
+        name: '呼吸器：在宅酸素療法（HOT）・自己管理・感染予防評価（処方流量切替・チューブ取り回し・ボンベ操作・火気厳禁・吸入薬手技）',
+        domain: '内部障害',
+        subgroup: '呼吸器疾患',
+        fields: [
+          {
+            key: 'hot_management_tubing',
+            label: 'HOT処方流量（安静時〇L / 労作時〇L）の自己切替理解度、鼻カニューラ・延長チューブ取り回し（転倒防止）、携帯用酸素ボンベ・カート操作と残量計算',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: 安静時1.5L／労作時3.0Lへの流量ダイアル自己切替自立。室内延長チューブ（5m）の足元巻き込み注意良好。携帯用ボンベカートを引いての院内歩行・残量確認手技習得'
+          },
+          {
+            key: 'inhaler_infection_prevention',
+            label: '吸入薬手技（MDI / DPI：十分な吸気流速と吸入後息止め）、火気厳禁（禁煙・ガスコンロ2m離隔）理解、手洗い・うがい等の急性増悪予防行動',
+            unit: '',
+            polar: 'neutral',
+            placeholder: '例: DPI吸入器（レルベア）の吸入手技自立（吸入後のうがい徹底）。調理時はIH推奨・火気2m以上厳禁を家族とともに遵守合意。感冒予防の手洗いマスク徹底'
+          }
+        ]
+      },
+
+      // --- 内部障害（従来・簡易スクリーニング項目） ---
       {
         id: 'internal_resp_circ',
-        name: '呼吸・循環機能・自覚症状 (mMRC / Hugh-Jones / 呼吸様式)',
+        name: '内部障害（簡易）：呼吸・循環機能・自覚症状 (mMRC / Hugh-Jones / 呼吸様式)',
         domain: '内部障害',
+        subgroup: '内部障害簡易',
         fields: [
           { key: 'resp_grade', label: 'mMRC Grade (0-4) / Hugh-Jones分類', unit: '', polar: 'lower', placeholder: '例: mMRC Grade 3、Hugh-Jones IV度' },
           { key: 'chest_obs', label: '呼吸様式・口すぼめ呼吸の定着', unit: '', polar: 'neutral', placeholder: '例: 労作時に肩呼吸著明、息こらえ癖あり' }
@@ -2666,8 +2850,9 @@
       },
       {
         id: 'internal_endurance_mets',
-        name: '運動耐容能・ADL時バイタル変動 (6MD / SpO2 / Borg)',
+        name: '内部障害（簡易）：運動耐容能・ADL時バイタル変動 (6MD / SpO2 / Borg)',
         domain: '内部障害',
+        subgroup: '内部障害簡易',
         fields: [
           { key: 'six_md', label: '6分間歩行距離 6MD(m)・最低SpO2(%)', unit: 'm', polar: 'higher', placeholder: '例: 215m（HOT 2L、最低SpO2 88%、Borg 5）' },
           { key: 'adl_vital', label: '入浴・更衣時 修正Borg(0-10)・最低SpO2', unit: '', polar: 'lower', placeholder: '例: 入浴時 修正Borg 6（SpO2 87%へ低下）' }
@@ -3872,77 +4057,230 @@
         }
       },
 
-      case_internal: {
+      case_cardiac: {
         info: {
-          id: '症例I（78歳男性・COPD急性増悪後）',
-          age: '78歳',
+          id: '症例C（74歳男性・慢性心不全急性増悪後・虚血性心筋症・心機能LVEF42%）',
+          age: '74歳',
           genderHand: '男性 / 右利き',
           domain: '内部障害領域',
-          careLevel: '要支援1',
-          family: '妻（75歳）と2人暮らし。',
-          house: '持ち家（1階生活）。',
-          lifestyle: '元大工。近所の囲碁サロンへ通うのが楽しみ。',
-          demand: '本人：「息が苦しくならずに風呂に入りたい、囲碁サロンへ歩いて行きたい」'
+          careLevel: '要介護1（通所リハビリ移行支援）',
+          family: '妻（71歳）と2人暮らし。長男家族は車で20分の近隣在住。',
+          house: '戸建て住宅（1階寝室・トイレ・浴室、玄関に上り框15cm段差あり）。',
+          lifestyle: '元公務員。定年後は家庭菜園と地域のグランドゴルフが日課。几帳面な性格。',
+          demand: '本人：「息苦しくならずに自宅のお風呂に入りたい。また庭の手入れをして、妻と一緒に散歩できるようになりたい」\n妻：「退院してもまた息苦しくなって救急搬送されないか心配。塩分制限や運動のさじ加減を教えてほしい」'
         },
         med: {
-          diagnosis: '慢性閉塞性肺疾患（COPD GOLD Stage III）急性増悪後',
-          disability: '労作時呼吸困難、運動耐容能低下、低酸素血症',
-          admission: 'X年11月2日',
-          prescription: 'X年11月5日',
-          history: '気道感染を契機に増悪入院。在宅酸素療法（HOT：安静1L/労作2L）導入。',
-          past: '高血圧症',
-          imaging: '著明な肺気腫性変化、%FEV1 42%。',
-          risk: 'SpO2 90%未満または修正Borg 5以上で休息。息こらえに注意。'
+          diagnosis: '慢性心不全（拡張不全・収縮不全混在型：LVEF 42%・NYHA II〜III度）急性増悪後、虚血性心筋症（陳旧性心筋梗塞後）',
+          disability: '心機能低下（心予備能低下）、労作時息切れ・動悸、易疲労性、下腿圧痕性浮腫、ADL負荷許容限界（目標3.5METs以内）',
+          admission: 'X年10月4日（急性心不全入院・利尿薬および血管拡張薬治療にてうっ血改善）',
+          prescription: 'X年10月10日（心臓リハビリテーション作業療法処方：退院前ADL負荷評価・セルフケア指導）',
+          history: '5年前に急性心筋梗塞を発症、PCI施行。以後通院内服中であったが、2週間前の感冒を契機に水分・塩分管理が不徹底となり体重3kg急増、夜間起坐呼吸が出現し緊急入院。薬物療法にて心不全徴候寛解、退院に向けたADL評価・METs管理・再入院予防指導のためOT介入。',
+          past: '高血圧症、脂質異常症、陳旧性心筋梗塞（OMI）',
+          imaging: '心エコー：LVEF 42%（前壁中隔壁運動低下）、左室拡張末期径 LVDd 56mm。胸部X線：心胸郭比CTR 58%（入院時64%から改善）、肺うっ血影消退。',
+          risk: '【心臓リハビリテーション中止基準遵守】安静時収縮期血圧160mmHg以上または80mmHg以下、HR110bpm以上、労作時HR処方上限（AT心拍数98bpm）超過、RPP>15,000、胸部不快感・不整脈頻発・チアノーゼ時は直ちに中止・休息。'
         },
-        activeAssessments: ['internal_resp_circ', 'internal_endurance_mets', 'fim_bi', 'iadl_copm'],
+        activeAssessments: [
+          'cardiac_severity_lab',
+          'cardiac_congestion_vitals',
+          'cardiac_mets_rpp_adl',
+          'cardiac_selfcare_prevention',
+          'fim_bi',
+          'iadl_copm',
+          'mtdlp'
+        ],
         assessmentValues: {
-          'internal_resp_circ__resp_grade': '3（mMRC Grade 3：100m歩行で息切れ停止）',
-          'internal_resp_circ__chest_obs': '労作時に肩呼吸と息こらえ（バルサルバ）が著明',
-          'internal_endurance_mets__six_md': '215m（6MD：HOT 2L、最低SpO2 88%、Borg 5）',
-          'internal_endurance_mets__adl_vital': '6（入浴時修正Borg 6、最低SpO2 87%へ低下）',
-          'fim_bi__fim_score': '105/126点（酸素流量変更と休息の声かけ要）',
-          'iadl_copm__copm': '3/10点（遂行度3、満足度2：息切れしない入浴と囲碁サロン外出）'
+          'cardiac_severity_lab__nyha_lvef': 'NYHA III度（平地歩行や着脱衣などの軽労作でも動悸・息切れ出現）。心エコー LVEF 42%（中等度低下、局所壁運動低下あり）',
+          'cardiac_severity_lab__bnp_egfr_hb': 'BNP 320 pg/mL（心不全心負荷高値）、eGFR 44.5 mL/min/1.73m²（CKD Stage 3b心腎連関）、Hb 10.6 g/dL（軽度貧血）',
+          'cardiac_congestion_vitals__vitals_arrhythmia': '安静時 BP 124/76, HR 72整, SpO2 97%。労作時 BP 142/84, HR 94整（AT心拍数98bpm以内遵守）。散発性PVC（単発、連発なし）。胸痛なし',
+          'cardiac_congestion_vitals__congestion_edema_weight': '両下腿脛骨前面に圧痕性浮腫（+）。頸静脈怒張軽度。ドライウェイト56.0kgに対し入院時59.2kg→現在56.8kg（+0.8kg）。起坐呼吸は消失',
+          'cardiac_mets_rpp_adl__tolerance_6md_cpx': '6MD 290m（自覚的運動強度 Borg 13/20「ややきつい」）。CPX AT心拍数 98 bpm（二重積RPP：安静時 8,928 → 労作時 13,348）',
+          'cardiac_mets_rpp_adl__adl_cardiac_load': '入浴シャワー浴 HR 96 bpm（+24bpm、修正Borg 4）、排便時いきみで収縮期血圧25mmHg急上昇あり。洗濯物干しで上肢挙上保持時に息切れ出現',
+          'cardiac_selfcare_prevention__monitoring_log_salt_fluid': '体重・血圧記録は未定着（妻任せ）。塩分制限（6g/日）の必要性は知っているが加工食品や漬物多食。水分制限（1,200mL/日）の計量習慣なし',
+          'cardiac_selfcare_prevention__medication_activity_pacing': '利尿薬・ARB・β遮断薬の自己管理はシートのまま引き出し保管（時折飲み忘れ）。退院後は以前通り庭仕事を一気にやると発言（過活動リスク大）',
+          'fim_bi__fim_score': '108/126点（入浴・階段昇降で息切れ・見守り要、その他セルフケア自立）',
+          'iadl_copm__copm': '3/10点（遂行度3、満足度2：息苦しくならない安全な入浴と家庭菜園）',
+          'mtdlp__target_activity': '「心臓病手帳とペーシングを活用し、息切れなく安全に入浴と庭の手入れができる」',
+          'mtdlp__score': '3/10点（遂行度3、満足度2）'
         },
         assessmentFinalValues: {
-          'internal_resp_circ__resp_grade': '2（mMRC Grade 2：ペース配分により平地連続歩行距離が延長）',
-          'internal_resp_circ__chest_obs': '立ち上がり・洗体時の「口すぼめ呼吸（呼気同調）」が定着し肩呼吸軽減',
-          'internal_endurance_mets__six_md': '295m（6MD：+80m延長、最低SpO2 91%維持、Borg 3）',
-          'internal_endurance_mets__adl_vital': '3（入浴時修正Borg 3、シャワーチェア活用しSpO2 92%以上を維持）',
-          'fim_bi__fim_score': '120/126点（HOT流量自己切り替えと省エネ動作定着し自立）',
-          'iadl_copm__copm': '8/10点（遂行度8、満足度8：酸素カートで150m先の囲碁サロン往復達成）'
+          'cardiac_severity_lab__nyha_lvef': 'NYHA II度（通常歩行での息切れ消失、階段昇降で軽度息切れにとどまる）。心エコー LVEF 44%（安定）',
+          'cardiac_severity_lab__bnp_egfr_hb': 'BNP 145 pg/mL（-175 pg/mL著明改善）、eGFR 46.8 mL/min/1.73m²（安定維持）、Hb 11.2 g/dL',
+          'cardiac_congestion_vitals__vitals_arrhythmia': '安静時 BP 116/72, HR 66整, SpO2 98%。労作時 BP 130/78, HR 82整。不整脈増悪なくバイタル安定推移',
+          'cardiac_congestion_vitals__congestion_edema_weight': '両下腿圧痕性浮腫消失（-）。頸静脈怒張陰性。退院時体重 56.1kg（ドライウェイト+0.1kgで完璧に維持コントロール達成）',
+          'cardiac_mets_rpp_adl__tolerance_6md_cpx': '6MD 365m（+75m延長、Borg 11「楽である〜やや楽」）。労作時RPP 10,660（心仕事量低下・運動効率改善）',
+          'cardiac_mets_rpp_adl__adl_cardiac_load': 'シャワーチェア使用により入浴時HR 78 bpm（修正Borg 2「弱い」へ改善）。排便いきみ回避（温水洗浄・排便姿勢指導定着）、物干し台調整',
+          'cardiac_selfcare_prevention__monitoring_log_salt_fluid': '毎朝排尿後の体重・血圧測定を「心臓病手帳」に毎日自発記録達成（100%記入）。減塩6g/日・水分1,200mL/日の計量ボトル管理定着',
+          'cardiac_selfcare_prevention__medication_activity_pacing': 'お薬カレンダー導入により服薬自己管理完全自立（飲み忘れ0回）。庭仕事は「20分作業＋10分日陰休息」のペーシング行動確立',
+          'fim_bi__fim_score': '124/126点（入浴シャワーチェア自立、階段昇降自立）',
+          'iadl_copm__copm': '8/10点（遂行度8、満足度9：手帳記録とシャワー入浴・軽度菜園作業自立）',
+          'mtdlp__target_activity': '「心臓に負担をかけないペースで、毎朝の記録と日課の散歩・家庭菜園を楽しむ」',
+          'mtdlp__score': '8/10点（遂行度8、満足度9）'
         },
         customAssessments: [],
         icf: {
-          health: 'COPD急性増悪後・在宅酸素療法（HOT）導入',
-          body: '【＋】認知・四肢筋力良好\n【－】換気障害、労作時低酸素血症、運動耐容能低下（6MD 215→295m）',
-          activity: '【－】入浴・洗髪時のSpO2低下、HOT管理、屋外歩行',
-          participation: '【目標】HOTを使用しながら自宅退院し、囲碁サロンへ通う',
-          environment: '【＋】妻が協力的、シャワーチェア・酸素カート導入',
-          personal: '78歳男性、元職人で動作を急ぎやすい'
+          health: '慢性心不全急性増悪後（虚血性心筋症・陳旧性心筋梗塞後・NYHA II〜III度・LVEF 42%）',
+          body: '【＋】骨関節可動域正常、四肢粗大筋力保持、認知機能清明\n【－】左室収縮能低下、心予備能低下、易疲労性・労作時息切れ、軽度下腿浮腫',
+          activity: '【＋】平地歩行、食事・整容・更衣自立\n【－】浴槽出入・洗体時の心拍上昇、排便時のいきみ、重量物運搬・上肢挙上作業での息切れ',
+          participation: '【目標】心臓病手帳による自己管理を継続し、再入院することなく自宅で家庭菜園と妻との散歩を再開する',
+          environment: '【＋】理解ある妻の食事・服薬支援、近隣の長男家族、浴室シャワーチェア導入\n【－】玄関上り框段差、庭の斜面・夏の直射日光',
+          personal: '74歳男性、元公務員で几帳面、病識を獲得すれば規則正しく記録を継続できる強みあり'
         },
         plan: {
-          stage: '4年：総合臨床実習（8週間）',
-          interpretation: '動作を急ぐ習慣と息こらえが動的肺過膨張を招き入浴時のSpO2低下（87%）を引き起こしていた。口すぼめ呼吸同調とシャワーチェア等の省エネルギー動作訓練により息切れ軽減と外出再建が可能と考えた。',
-          stg: '【短期目標】シャワーチェアと口すぼめ呼吸を併用し、SpO2 90%以上・修正Borg 3以下で安全に入浴できる。',
-          ltg: '【長期目標】HOT自己管理と省エネ動作が自立し、酸素カートで囲碁サロンへ通える。',
+          stage: '3年：評価実習／4年：総合臨床実習（内部障害・心臓リハビリテーション）',
+          interpretation: '本症例の心不全増悪の根本要因は、過活動による心負荷過剰（ペーシング不足）と、塩分・水分・体重のセルフモニタリング不足であった。心エコーLVEF 42%・AT処方心拍数98bpmという医学的制限（許容METs 3.5以内）の範囲内で、高負荷ADL（入浴・排便・上肢挙上作業）の動作手順を省エネルギー化（シャワーチェア、呼吸法、いきみ回避）し、毎朝の体重血圧手帳記録とお薬カレンダーによる自己管理行動を確立することで、再入院を防ぎながら望む家庭生活が再獲得できると判断した。',
+          stg: '【短期目標（2週）】シャワーチェアを用いて心拍数85bpm以下・修正Borg 3以下で入浴でき、毎朝の体重・血圧を心臓病手帳に記録できる。',
+          ltg: '【長期目標（4週）】減塩・水分制限と活動ペーシング（20分作業+10分休息）を遵守し、ドライウェイト±1kgを維持して家庭菜園を再開できる。',
           programs: [
             {
-              name: '1. パルスオキシメータを用いたADL呼吸同調・省エネルギー入浴訓練',
-              detail: 'シャワーチェアの高さ調整、吐きながら動く口すぼめ呼吸、1動作ごとの小休止を実動作で練習。',
-              rationale: '視覚的バイタルフィードバックで急ぎ癖と息こらえを防ぎ、労作時低酸素血症を予防するため。'
+              name: '1. 心臓リハビリテーションに基づくADL省エネルギー動作訓練（入浴・排泄・家事動作）',
+              detail: '心電図モニター・パルスオキシメータ装着下でのシャワーチェア入浴練習、排便時のいきみ回避姿勢（前傾位・足台使用）、上肢挙上作業の台調整。',
+              rationale: '二重積（RPP）の急激な上昇や心筋酸素消費量の増大を抑え、安全な許容METs内で日常動作を完遂するため。'
             },
             {
-              name: '2. HOT自己管理および酸素カート屋外インターバル歩行訓練',
-              detail: '安静時1L・労作時2Lの切り替え練習と、150m屋外歩行のペース配分練習。',
-              rationale: '退院後の囲碁サロン通いを安全に実現するため。'
+              name: '2. 心不全再入院予防のためのセルフケア教育（心臓病手帳記録・減塩水分管理・服薬指導）',
+              detail: '毎朝の排尿後体重測定と手帳記入、1日の水分計量ボトル作成、妻を交えた栄養科減塩指導の振り返り、お薬カレンダーによる服薬管理。',
+              rationale: '心不全増悪の最大誘因である「体重急増（うっ血）」「塩分水分過多」「服薬アドヒアランス低下」を患者自身が早期発見・自己予防するため。'
+            },
+            {
+              name: '3. 運動耐容能向上と生活活動ペーシング指導（院内インターバル歩行・家庭菜園模擬練習）',
+              detail: 'AT心拍数（98bpm）を上限とした平地インターバル歩行（300m）、プランターを用いた座位での園芸作業練習、作業と休息のタイムスケジュール作成。',
+              rationale: '末梢循環と骨格筋酸素利用能を改善しつつ、過活動による心負荷クラッシュを防止して安全に趣味活動を再開するため。'
             }
           ]
         },
-        soapNotes: [],
+        soapNotes: [
+          {
+            id: 'soap_cardiac_1',
+            date: '第10日目（シャワーチェア入浴負荷評価と心臓病手帳セルフケア指導）',
+            vital: '開始前 BP 118/72, HR 68整, SpO2 98% → 終了後 BP 122/76, HR 76整, SpO2 97%（胸部症状・不整脈なし）',
+            programs: [
+              '1. 心臓リハビリテーションに基づくADL省エネルギー動作訓練（入浴・排泄・家事動作）',
+              '2. 心不全再入院予防のためのセルフケア教育（心臓病手帳記録・減塩水分管理・服薬指導）'
+            ],
+            s: '「普通の椅子でお風呂に入ったら全然息が切れなくてびっくりしました。以前は立ったまま体を洗ってハアハア言っていましたが、これなら怖くありません」「毎朝の体重手帳も、朝トイレの後に測るのを日課にしたら忘れずに書けています」と笑顔で話される。',
+            o: '模擬浴室にてシャワーチェア（座面高42cm）を使用した入浴動作評価を実施。足元から徐々にぬるめ（40℃）の湯をかけ、座位にて洗体・洗髪を実施。動作中の最大HRは76bpm（開始前比+8bpmにとどまる）、修正Borg 2（「弱い」）で安定。洗体用柄付きタオルを活用し、体幹過度前屈を回避。心臓病手帳の確認では、直近7日間の体重・血圧・脈拍が漏れなく記入されており、体重は56.2±0.3kgのドライウェイト範囲で推移。妻とも水分計量ボトル（1,200mL/日）の運用を確認。',
+            a: 'シャワーチェアと柄付きタオルの導入により、従来心不全患者で最も負荷が高いとされる入浴時の二重積急上昇を完全に抑制できた。心臓病手帳の自己記録アドヒアランスも極めて高く、客観的バイタルに基づき患者自身が「今日の体調」を把握できるセルフマネジメント能力が着実に形成されている。',
+            p: '1. 次回はプランターを用いた座位での園芸模擬作業（家庭菜園）時の心拍応答とペーシングを評価する。\n2. 退院に向け、介護保険住宅改修（浴室・玄関手すり設置）および通所リハビリテーションの利用計画をケアマネジャーへ情報提供する。'
+          }
+        ],
         reEval: {
           goalAchievement: '◎ 達成（目標水準を獲得）',
-          effectAnalysis: '口すぼめ呼吸と省エネルギー入浴法の定着により、入浴時の修正Borgは6→3（-3）、最低SpO2も87%→92%へと改善した。6分間歩行距離（6MD）も215→295m（+80m）へと向上し、酸素カートでの囲碁サロン往復移動を達成した。',
-          nextPlan: '冬季の感染予防と、毎日のSpO2・息切れ日誌のセルフモニタリングを継続するよう本人・妻へ指導した。'
+          effectAnalysis: '心臓リハビリテーションに基づくADL省エネルギー化（シャワーチェア導入・排便いきみ回避）と毎朝の手帳記録定着により、BNPは320→145 pg/mLへと半減し下腿浮腫は完全消退した。6分間歩行距離（6MD）は290mから365m（+75m）へ延伸し、入浴時HR上昇も抑えられてFIMは108→124点へ改善。毎日の体重・血圧手帳記入率100%を達成し、活動ペーシング遵守のもと安全に家庭菜園を再開して退院となった。',
+          nextPlan: '退院後は通所リハビリ（心臓リハビリ対応）へ週1回通所し、かかりつけ循環器内科と連携して心不全手帳を毎回の受診時に持参・確認する方針とした。'
+        }
+      },
+
+      case_internal: {
+        info: {
+          id: '症例I（78歳男性・COPD慢性閉塞性肺疾患急性増悪後・HOT導入期）',
+          age: '78歳',
+          genderHand: '男性 / 右利き',
+          domain: '内部障害領域',
+          careLevel: '要支援1（退院後通所リハビリ・訪問看護導入予定）',
+          family: '妻（75歳）と2人暮らし。子供は独立。',
+          house: '持ち家（1階生活中心・玄関段差あり）。',
+          lifestyle: '元大工。近所の囲碁サロンへ通うのが生きがい。動作を急ぎやすい職人気質。',
+          demand: '本人：「息が苦しくならずに自宅の風呂に入りたい。また囲碁サロンへ歩いて行けるようになりたい」\n妻：「少し動くだけですぐ肩で息をして唇が紫色になるので心配。酸素の使い方やお風呂の介助法を教えてほしい」'
+        },
+        med: {
+          diagnosis: '慢性閉塞性肺疾患（COPD GOLD Stage III：重症気流閉塞）急性増悪後',
+          disability: '労作時低酸素血症（デサチュレーション）、労作時呼吸困難（動的肺過膨張）、呼吸補助筋過緊張・肩呼吸、運動耐容能低下、HOT操作管理',
+          admission: 'X年11月2日（気道感染に伴う急性増悪にて緊急入院・抗菌薬およびステロイド治療施行）',
+          prescription: 'X年11月5日（呼吸リハビリテーション作業療法処方：ADL呼吸同調・省エネ動作・HOT指導）',
+          history: '喫煙歴40本/日×50年。5年前より労作時息切れ自覚も放置。2週間前に感冒から発熱・喀痰増加・呼吸困難急変し入院。在宅酸素療法（HOT：安静時1.5L/労作時3.0L）導入決定。退院に向けたADL動作訓練とパニックコントロールのためOT介入。',
+          past: '高血圧症、胃潰瘍既往',
+          imaging: '胸部CT：両側肺野の著明な気腫性変化（ローアッテネーションエリア広汎）、横隔膜平低化、滴状心。スパイロ：FEV1.0% 41.5%、%FEV1 38.2%（重症閉塞性換気障害）。',
+          risk: '【呼吸不全リスク管理】過度な高濃度酸素吸入によるCO2ナルコーシス予防（処方流量遵守）。SpO2 88%未満または修正Borg 5以上で直ちに動作中断・安楽前傾位休息。息こらえ（バルサルバ）による換気不全防止。火気2m以内厳禁。'
+        },
+        activeAssessments: [
+          'resp_severity_pulmonary_lab',
+          'resp_pattern_mechanics_nutrition',
+          'resp_endurance_adl_desaturation',
+          'resp_hot_selfcare_infection',
+          'fim_bi',
+          'iadl_copm',
+          'mtdlp'
+        ],
+        assessmentValues: {
+          'resp_severity_pulmonary_lab__dyspnea_grade_spiro': 'mMRC Grade 3（平地で同年代より歩行が遅く、自分のペースで歩行中も息切れのため立ち止まる）。スパイロ：FEV1.0% 41.5%（GOLD Stage III 重症）',
+          'resp_severity_pulmonary_lab__gas_kl6_imaging': '動脈血ガス（room air）：PaO2 56 Torr, PaCO2 44 Torr, pH 7.39（CO2貯留なし・低酸素血症あり）。胸部CT：汎小葉性肺気腫所見顕著',
+          'resp_pattern_mechanics_nutrition__resp_pattern_chest_expansion': '安静時呼吸数 22回/分。労作時に胸鎖乳突筋・僧帽筋の著明な肩呼吸と息こらえ出現。胸郭拡張差：腋窩 1.8cm, 剣状突起 1.2cm（可動性低下）',
+          'resp_pattern_mechanics_nutrition__sputum_cough_nutrition': '有効咳嗽可能だが排痰時に強い息切れ伴う。BMI 18.1 kg/m²（るい痩・呼吸筋疲労傾向）、Alb 3.4 g/dL',
+          'resp_endurance_adl_desaturation__tolerance_6md_spo2': '6MD 215m（HOT 2L吸入下、最低SpO2 86%まで低下、回復時間3分20秒、歩行後Borg 5「強い息切れ」）',
+          'resp_endurance_adl_desaturation__adl_desat_pacing_panic': '洗髪・入浴時に立位前屈での息こらえ癖あり、SpO2 84%へ急低下しパニック傾向。修正Borg 6。更衣靴下着脱時も前屈でSpO2 87%へ低下',
+          'resp_hot_selfcare_infection__hot_management_tubing': '安静時1.5L／労作時3.0Lの切り替えを忘れがち。延長チューブを足元に引っ掛けつまずきリスク大。ボンベ残量計の見方不十分',
+          'resp_hot_selfcare_infection__inhaler_infection_prevention': '吸入薬（レルベア）の吸入速度不足、吸入後の息止め・うがい手順が不完全。火気管理（禁煙遵守）は本人理解良好',
+          'fim_bi__fim_score': '105/126点（入浴・更衣・移動で息切れ・HOT操作介助要）',
+          'iadl_copm__copm': '3/10点（遂行度3、満足度2：息切れしない入浴と囲碁サロン外出）',
+          'mtdlp__target_activity': '「口すぼめ呼吸と酸素カートを活用し、息切れなく入浴と囲碁サロン通いができる」',
+          'mtdlp__score': '3/10点（遂行度3、満足度2）'
+        },
+        assessmentFinalValues: {
+          'resp_severity_pulmonary_lab__dyspnea_grade_spiro': 'mMRC Grade 2（同年代より遅いが、平地を自分のペースであれば息切れなく連続歩行可能へ改善）',
+          'resp_severity_pulmonary_lab__gas_kl6_imaging': '動脈血ガス（HOT 1.5L吸入下）：PaO2 78 Torr, PaCO2 42 Torr（安定良好、CO2ナルコーシス兆候なし）',
+          'resp_pattern_mechanics_nutrition__resp_pattern_chest_expansion': '口すぼめ呼吸（呼気1：吸気2の同調）が自発定着し、肩呼吸・頸部補助筋過緊張が著明に軽減。胸郭拡張差：腋窩 2.6cm（+0.8cm改善）',
+          'resp_pattern_mechanics_nutrition__sputum_cough_nutrition': 'ハッフィング（Huffing）指導により少ないエネルギー消費で喀痰喀出自立。栄養指導連携でBMI 18.6 kg/m²へ微増維持',
+          'resp_endurance_adl_desaturation__tolerance_6md_spo2': '6MD 295m（+80m大幅延伸！最低SpO2 91%維持、回復時間1分10秒へ短縮、歩行後Borg 3「適度」）',
+          'resp_endurance_adl_desaturation__adl_desat_pacing_panic': 'シャワーチェア＋柄付きスポンジ導入、「吐きながら動く」呼吸同調により入浴時SpO2 92%以上を維持！修正Borg 3へ半減',
+          'resp_hot_selfcare_infection__hot_management_tubing': '安静時1.5L／労作時3.0Lへの流量ダイアル自己切替自立（100%）。チューブ取り回し・酸素カートを引いての院内歩行完全習得',
+          'resp_hot_selfcare_infection__inhaler_infection_prevention': 'レルベア吸入手技（十分な吸気流速＋5秒息止め＋含嗽）完全自立。帰宅時の手洗いマスク習慣徹底',
+          'fim_bi__fim_score': '122/126点（入浴シャワーチェア自立、更衣自立、HOT管理自立）',
+          'iadl_copm__copm': '8/10点（遂行度8、満足度8：酸素カートで150m先の囲碁サロン往復達成）',
+          'mtdlp__target_activity': '「酸素を味方につけて、無理のないペースで囲碁サロン仲間との対局を楽しむ」',
+          'mtdlp__score': '8/10点（遂行度8、満足度8）'
+        },
+        customAssessments: [],
+        icf: {
+          health: 'COPD（GOLD Stage III 重症気流閉塞）急性増悪後・在宅酸素療法（HOT）導入期',
+          body: '【＋】認知清明、大工経験による道具操作技能・手指巧緻性良好\n【－】不可逆的気道閉塞、動的肺過膨張、労作時デサチュレーション、呼吸筋易疲労性、浅速呼吸',
+          activity: '【＋】自立歩行（平地マイペース）、食事・整容自立\n【－】立位洗髪・浴槽出入でのSpO2急低下（84%）、靴下着脱での息切れ、HOT流量切替・チューブ管理',
+          participation: '【目標】HOTと呼吸同調を身につけ自宅退院し、週2回囲碁サロンへ通って仲間と対局する',
+          environment: '【＋】協力的で気配り上手な妻、浴室シャワーチェア導入、携帯用酸素カート\n【－】大工時代の急ぎ癖、冬季の冷気・乾燥、玄関段差',
+          personal: '78歳男性、元職人で負けず嫌い、納得すれば自己管理を徹底できる真面目さあり'
+        },
+        plan: {
+          stage: '4年：総合臨床実習（8週間）',
+          interpretation: '本症例の労作時息切れ・SpO2低下（84%）の主因は、動作を急ぐ職人気質に伴う「無意識の息こらえ（バルサルバ効果）」と前屈・上肢挙上による動的肺過膨張であった。パルスオキシメータによるバイタルフィードバックを用い、動作と呼気を合わせる「口すぼめ呼吸同調動作」とシャワーチェア等の環境調整を指導し、HOT流量切替および携帯酸素カート操作を反復練習することで、在宅生活の安全自立と目標である囲碁サロン外出が達成可能と判断した。',
+          stg: '【短期目標（3週）】シャワーチェアと口すぼめ呼吸を併用し、SpO2 90%以上・修正Borg 3以下で安全に入浴でき、HOT流量切替を自己判断できる。',
+          ltg: '【長期目標（8週）】携帯用酸素カートを用いて屋外150mをSpO2 90%以上で連続歩行でき、囲碁サロンへ自力通所できる。',
+          programs: [
+            {
+              name: '1. パルスオキシメータを用いたADL呼吸同調・省エネルギー動作訓練（入浴・更衣・排泄）',
+              detail: 'シャワーチェアの選定・高さ調整、前屈を避ける柄付きボディタオル・ソックスエイド導入、「息を吐きながら立ち上がる・腕を上げる」呼吸同調の実動作反復。',
+              rationale: '息こらえによる動的肺過膨張と急激な低酸素血症（デサチュレーション）を防ぎ、息切れなくADLを遂行するため。'
+            },
+            {
+              name: '2. 呼吸法指導（口すぼめ呼吸・腹式呼吸・ハッフィング排痰法）および胸郭可動域練習',
+              detail: '呼気時間を吸気の2倍以上確保する口すぼめ呼吸、肩甲帯・頸部リラクゼーション、胸郭拡張ストレッチ、エネルギー消耗の少ないHuffing排痰法練習。',
+              rationale: '内因性PEEP効果で末梢気道の虚脱を防ぎ、換気効率を改善して呼吸仕事量と息切れ感を低減させるため。'
+            },
+            {
+              name: '3. HOT自己管理・吸入手技教育および携帯酸素カート屋外インターバル歩行訓練',
+              detail: '安静時1.5L／労作時3.0Lの切り替え習慣化、チューブ足元安全確認、携帯ボンベ残量計算、レルベア吸入手技チェック、屋外150m歩行ペーシング。',
+              rationale: '退院後の急性増悪・転倒を防ぎ、本人の生きがいである囲碁サロン通いを安全・確実に実現するため。'
+            }
+          ]
+        },
+        soapNotes: [
+          {
+            id: 'soap_copd_1',
+            date: '第14日目（シャワーチェア入浴呼吸同調評価とHOT携帯カート屋外歩行）',
+            vital: '開始前 BP 126/78, HR 74, SpO2 97%（HOT 1.5L） → 終了後 BP 130/82, HR 86, SpO2 93%（HOT 3.0L、修正Borg 3「適度」）',
+            programs: [
+              '1. パルスオキシメータを用いたADL呼吸同調・省エネルギー動作訓練（入浴・更衣・排泄）',
+              '2. 呼吸法指導（口すぼめ呼吸・腹式呼吸・ハッフィング排痰法）および胸郭可動域練習',
+              '3. HOT自己管理・吸入手技教育および携帯酸素カート屋外インターバル歩行訓練'
+            ],
+            s: '「お風呂で息を吐きながら体を洗うコツが掴めてきました。以前みたいに苦しくなって慌てることがなくなって本当に安心しました」「カートを押して病院の外を歩けたから、これなら囲碁サロンにも行けそうです！」と晴れやかな笑顔を見せる。',
+            o: '模擬浴室にてシャワーチェア入浴を実施。開始前にHOT流量を自発的に3.0Lへ変更。洗髪・洗体動作において「息を口から細く長く吐きながら腕を動かす」口すぼめ呼吸同調を実践。動作中の最低SpO2は92%（初期評価時84%から劇的改善）、修正Borg 3。動作後の安楽前傾座位（肘を大腿部に置くポジション）での呼吸回復時間は1分以内。その後、携帯用酸素ボンベカートを操作し、病院中庭の屋外歩行路（往復150m）を実施。歩行速度をマイペースに保ち、SpO2 91〜94%を維持して完遂。',
+            a: '急ぎ癖に伴う「息こらえ」が解消し、呼気に同期させた動作パターンが身体運動として自動化されてきている。シャワーチェアによる立位前屈負荷の排除と口すぼめ呼吸の相乗効果により、最難関であった入浴動作の低酸素血症を完全に克服できた。屋外歩行耐容能も150m達成し、囲碁サロン再開への見通しが立った。',
+            p: '1. 退院前カンファレンスにて、訪問看護およびケアマネジャーへ「入浴時シャワーチェア使用・HOT3.0L設定」のケアプランを伝達する。\n2. 自宅浴室への手すり設置と脱衣所の暖房器具配置（ヒートショック・冷気刺激予防）を家族に助言する。'
+          }
+        ],
+        reEval: {
+          goalAchievement: '◎ 達成（目標水準を獲得）',
+          effectAnalysis: '呼吸同調動作訓練と省エネ入浴（シャワーチェア導入）により、入浴時最低SpO2は84%から92%へ著明に改善し修正Borgは6→3へ半減した。6分間歩行距離（6MD）も215mから295m（+80m）へ大幅延伸。HOT流量自己切替・吸入手技も100%定着し、FIMは105→122点へ向上。携帯酸素カートを用いて目標の囲碁サロン通所を自立達成した。',
+          nextPlan: '退院後は訪問看護による定期的なSpO2・喀痰チェックと通所リハビリを週1回利用し、冬季の感染予防（手洗い・ワクチン）を徹底する方針とした。'
         }
       },
 
@@ -4656,7 +4994,8 @@
           { id: 'case_dev', label: '【発達・小児】ASD・発達性協調運動障害（7歳男児・学齢期支援）' },
           { id: 'case_cp', label: '【発達・小児】脳性麻痺 痙直型両麻痺（5歳男児・就学支援・食具自立）' },
           { id: 'case_adhd', label: '【発達・ADHD】注意欠如多動症・感覚過敏（9歳女児・教室適応）' },
-          { id: 'case_internal', label: '【内部障害】COPD急性増悪後（78歳男性）' },
+          { id: 'case_cardiac', label: '【内部・心疾患】慢性心不全・心臓リハビリ（74歳男性）' },
+          { id: 'case_internal', label: '【内部・呼吸器】COPD急性増悪後・HOT導入（78歳男性）' },
           { id: 'case_cancer', label: '【内部・緩和】肺がん骨転移・緩和ケア期（66歳男性）' }
         ]
       },
@@ -4681,7 +5020,8 @@
           { id: 'case_stroke', label: '【身体・中枢】右被殻出血（72歳男性）' },
           { id: 'case_ortho', label: '【身体・整形】左大腿骨頚部骨折（81歳女性）' },
           { id: 'case_geriatric', label: '【老年期・認知症】アルツハイマー型認知症・廃用（86歳女性）' },
-          { id: 'case_internal', label: '【内部障害】COPD急性増悪後（78歳男性）' }
+          { id: 'case_cardiac', label: '【内部・心疾患】慢性心不全・心臓リハビリ（74歳男性）' },
+          { id: 'case_internal', label: '【内部・呼吸器】COPD急性増悪後・HOT導入（78歳男性）' }
         ]
       },
       mental: {
@@ -4880,7 +5220,7 @@
           return;
         }
         if (config.id === 'physical') {
-          const allowed = ['身体障害', '脳血管障害', '手の外科・末梢神経', '高次脳機能障害', '脊髄損傷', 'パーキンソン病', '関節リウマチ', '老年期・認知症', '内部障害', 'がん・緩和ケア', '脳性麻痺', 'ADL・作業・共通', '精神科横断・リカバリー', '精神科疾患別'];
+          const allowed = ['身体障害', '脳血管障害', '手の外科・末梢神経', '高次脳機能障害', '脊髄損傷', 'パーキンソン病', '関節リウマチ', '老年期・認知症', '内部障害', '心疾患（循環器）', '呼吸器疾患', 'がん・緩和ケア', '脳性麻痺', 'ADL・作業・共通', '精神科横断・リカバリー', '精神科疾患別'];
           btn.style.display = allowed.includes(filter) ? '' : 'none';
         } else if (config.id === 'mental') {
           const allowed = ['精神障害', '精神科横断・リカバリー', '精神科疾患別', '発達・小児', '脳性麻痺', 'ADL・作業・共通'];
@@ -5774,6 +6114,20 @@
 
         renderActiveAssessmentForms();
         handleInput();
+      } else if (domain === '心疾患（循環器）' || domain === '心疾患') {
+        // 心疾患の専門評価4項目と基本ADL項目を自動選択
+        ['cardiac_severity_lab', 'cardiac_congestion_vitals', 'cardiac_mets_rpp_adl', 'cardiac_selfcare_prevention', 'fim_bi', 'iadl_copm'].forEach(id => {
+          activeAssessmentIds.add(id);
+        });
+        renderActiveAssessmentForms();
+        handleInput();
+      } else if (domain === '呼吸器疾患' || domain === '呼吸器') {
+        // 呼吸器疾患の専門評価4項目と基本ADL項目を自動選択
+        ['resp_severity_pulmonary_lab', 'resp_pattern_mechanics_nutrition', 'resp_endurance_adl_desaturation', 'resp_hot_selfcare_infection', 'fim_bi', 'iadl_copm'].forEach(id => {
+          activeAssessmentIds.add(id);
+        });
+        renderActiveAssessmentForms();
+        handleInput();
       }
 
       renderAssessmentChips();
@@ -5809,6 +6163,10 @@
               'mtdlp'
             ]);
             if (!strokeAllowedIds.has(item.id) && item.subgroup !== '脳血管障害' && !item.id.startsWith('stroke_')) return;
+          } else if (currentDomainFilter === '心疾患（循環器）' || currentDomainFilter === '心疾患') {
+            if (item.subgroup !== '心疾患・循環器' && !item.id.startsWith('cardiac_')) return;
+          } else if (currentDomainFilter === '呼吸器疾患' || currentDomainFilter === '呼吸器') {
+            if (item.subgroup !== '呼吸器疾患' && !item.id.startsWith('resp_')) return;
           } else if (currentDomainFilter === '脊髄損傷') {
             if (item.subgroup !== '脊髄損傷' && !item.id.startsWith('sci_')) return;
           } else if (currentDomainFilter === 'パーキンソン病') {
@@ -6188,10 +6546,26 @@ ${soapSnippet || '記録なし'}
           { id: 'cp_seating_orthosis_deformity', reason: '成長に伴って進行しやすい骨・関節の変形を予防し、リラックスして手を使える「姿勢の土台」となる環境（座位保持装置・補装具）を整えるため。' }
         );
       }
-      if (/COPD|呼吸|心不全|HOT/.test(text)) {
+      if (/心不全|心疾患|虚血性|心筋梗塞|狭心症|心機能|心臓|心エコー|NYHA|LVEF|BNP|心大血管|弁膜症|心不全手帳/.test(text)) {
         recs.push(
-          { id: 'internal_resp_circ', reason: '息切れ分類（mMRC）と口すぼめ呼吸の定着を評価するため。' },
-          { id: 'internal_endurance_mets', reason: '6分間歩行距離（6MD）と入浴時のSpO2・修正Borg指数の改善を前後比較するため。' }
+          { id: 'cardiac_severity_lab', reason: 'NYHA心機能分類（I〜IV度）、心エコーLVEF、心負荷マーカー（BNP）や腎機能を把握し、安全な活動範囲と負荷上限を決定するため。' },
+          { id: 'cardiac_congestion_vitals', reason: 'うっ血徴候（下腿浮腫・頸静脈怒張・1週2kg以上体重増加）や不整脈・起坐呼吸を監視し、中止基準に照らして安全管理を行うため。' },
+          { id: 'cardiac_mets_rpp_adl', reason: '6MD/CPX処方心拍数や二重積（RPP）、高負荷ADL（入浴・排便・階段・上肢挙上）時の脈拍変動と修正Borgを評価するため。' },
+          { id: 'cardiac_selfcare_prevention', reason: '再入院の最大要因である塩分・水分過多、服薬忘れ、退院後の過活動を防ぐため、毎朝の手帳記録とペーシングを評価・指導するため。' }
+        );
+      }
+      if (/COPD|呼吸|間質性肺炎|誤嚥性肺炎|肺気腫|肺がん術後|HOT|在宅酸素|mMRC|Hugh-Jones|スパイロ|喀痰|排痰|気道閉塞/.test(text)) {
+        recs.push(
+          { id: 'resp_severity_pulmonary_lab', reason: '閉塞性・拘束性換気障害の判別、息切れ重症度（mMRC）、動脈血ガス（CO2ナルコーシス注意）や画像所見を把握するため。' },
+          { id: 'resp_pattern_mechanics_nutrition', reason: '口すぼめ腹式呼吸の定着度、呼吸補助筋過緊張・肩呼吸、胸郭拡張差、咳嗽力や呼吸るい痩（BMI）を評価するため。' },
+          { id: 'resp_endurance_adl_desaturation', reason: '6MD歩行距離・最低SpO2や、ADL（洗髪・更衣・前屈）時の息こらえ急ぎ癖・デサチュレーションを特定し呼吸同調を促すため。' },
+          { id: 'resp_hot_selfcare_infection', reason: '在宅酸素療法（HOT流量自己切替・チューブ転倒予防・ボンベ操作）と吸入薬手技・感染予防行動を評価・指導するため。' }
+        );
+      }
+      if (/内部障害/.test(text) && !/心|呼吸|COPD|がん/.test(text)) {
+        recs.push(
+          { id: 'internal_resp_circ', reason: '呼吸・循環機能の基礎スクリーニングおよび労作時自覚症状を評価するため。' },
+          { id: 'internal_endurance_mets', reason: '6分間歩行距離（6MD）と入浴時バイタル変動を前後比較するため。' }
         );
       }
       if (/がん|癌|悪性腫瘍|緩和|ターミナル|終末期|骨転移|脳転移|化学療法|抗がん剤|CIPN|倦怠感|CRF|Performance Status|KPS|ECOG|オピオイド|スピリチュアル/.test(text)) {
